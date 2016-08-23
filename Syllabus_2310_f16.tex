@@ -26,25 +26,180 @@
 \synctex=1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\score}[1]{\textit{#1}\addtocounter{totalscore}{#1}}
-\newcommand{\razdel}[1]{\smallskip\underline{\textbf{#1:}}\smallskip}
-
-\newcommand{\note}[1]{{\Large\sf{}\color{blue}(#1)}}
+% \newcommand{\razdel}[1]{\smallskip\underline{\textbf{#1:}}\smallskip}
 
 \begin{document}
 
 \title[]{MATH 2310: CALCULUS III}
 \author{Leonid Petrov\\Fall 2016}
-\date{\today. An up to date syllabus is always at \url{http://github.com/}}
+\date{\today. An up to date syllabus is always on \href{https://github.com/lenis2000/Syllabi/blob/master/Syllabus_2310_f16.pdf}{\texttt{GitHub}} (for direct PDF download use \href{https://github.com/lenis2000/Syllabi/raw/master/Syllabus_2310_f16.pdf}{\texttt{this link}}).}
 \maketitle
 
+% \setcounter{tocdepth}{1}
+% \tableofcontents
+\setcounter{tocdepth}{3}
 
+\section{First things first}
 
+\subsection{Overview}
 
+How do you compute the value of $\pi$ with a dart? How do you make the largest possible box out of a piece of paper? How does Google Maps know all the distances between any two points? How do you find the direction if you are lost in the universe? Most importantly, how come these are all mathematical questions?
+
+Mathematicians have worked for centuries to answer these and many other questions from various aspects of the real world. This course aims to introduce you to one of the most classic and powerful approaches: the Multivariable Calculus. It studies a wide range of topics involving functions in more than a single variable (two or three in most cases). This knowledge is a product of many generations of great mathematicians, and it is at the center of modern sciences and many areas of mathematics. 
+
+By the end of this course, you will be able to:
+\begin{itemize}
+	\item 
+	Describe basic 3-dimensional objects, such as curves, surfaces, solids, and vector fields in various coordinate systems.
+	\item 
+	Understand further the concept of differentiation, and adapt its algebraic and geometric interpretations to models in physics, chemistry, economics, and other disciplines you learned or are learning in other courses.
+	\item 
+	Explain the mathematical meaning of infinitesimal and infinity, and implement these to study properties of 2- and 3-dimensional objects such as length, area, volume, etc.
+	\item 
+	Relate differentiation and integration in various settings and explore how this can give us insights into real-world applications.
+	\item 
+	Make concise mathematical arguments about the concepts of the course.
+\end{itemize}
+
+\subsection{Basic information}{\ }
+
+\vspace{5pt}
+
+\begin{tabular}{r|l|l}
+	\hline
+	&\textbf{11am section (500\&501)} & \textbf{2pm section (300\&301)}
+	\\\hline
+	\textbf{Class times}&TuTh 11:00AM--12:15PM; Dell 2, 103 & TuTh 2:00--3:15PM; Dell 1, 105 
+	\\\hline
+	\textbf{Discussions}&Mo 5:00--5:50PM; Monroe Hall, 111
+	&
+	We 5:00--5:50PM; Maury Hall, 115
+	\\\hline
+	\textbf{Final exam}&
+	Mo, Dec 12, 9:00--12:00AM&
+	Sa, Dec 10,	9:00--12:00AM
+	\\\hline
+\end{tabular}
+
+\vspace{10pt}
+
+\parbox{.5\textwidth}{
+
+\textbf{Instructor:} Leonid Petrov
+
+\textbf{Email:} I'm trying an unusual method of course communication, see \hyperref[comm]{\texttt{this part of the syllabus}}
+
+\textbf{Office:} 209 Kerchof Hall
+
+\textbf{Office hours:} TuTh 1:00--1:50PM,
+or by appointment (you can make as many as you want)}\hspace{30pt}
+\parbox{.4\textwidth}{
+
+\textbf{Teaching Assistant:} Xiang Wan
+
+\textbf{Office:} 112 Kerchof Hall
+
+\textbf{Office hours:} TBA}
+
+\vspace{5pt}
+
+\subsection{About the instructor}
+I am an assistant professor in the Department of Mathematics at UVA, and I've been here since 2014. My research area is probability theory. More precisely, I am using exact formulas to study large random systems. I also like computer simulations of random systems, some examples are \href{http://faculty.virginia.edu/petrov//blog/2015/02/20/Shapes%20with%20holes/}{\texttt{at this link}}.
+
+%https://www.radcliffe.harvard.edu/event/2016-art-discovery-exhibition-opening
+
+\subsection{Textbook}
+
+\emph{Multivariable Calculus} by Stewart, edition 7E. This is the second half of the full calculus book, and begins with Chapter 10. We will cover Chapters 12--16.
+
+\subsection{Discussion sessions} 
+
+In addition to our in-class meetings on Tuesdays and Thursdays, there will be 50-minute discussion sessions on Mondays (11am section) or Wednesdays (2pm section) led by Xiang Wan. These meetings are highly important for the success in the course, and will consist of:
+\begin{itemize}
+	\item 
+	Group work on due homework (all homework will be due on Thursdays). By this time you should have thought about most of the homework problems, and should have some questions. Xiang will separate you into different study groups, randomly every session. It’s a great opportunity to share thoughts and get to know your fellow students. Even if you have figured out all problems, take this chance to practice presenting your thoughts to your peers. In addition, you may get some different perspective on your solutions, which is always helpful. Also read \hyperref[academic_integrity]{\texttt{here}} on collaboration.
+	\item 
+	Discussion of past homework, to clear up things you didn't understand. Solutions to past homeworks will be available on Collab.
+	\item Occasional pop quizzes, to ensure you have the basic understanding of the current topics.
+	\item The 3 midterm tests will also be given during discussion sessions.
+\end{itemize}
+
+\section{Assessment}
+
+Learning mathematics means \emph{doing} mathematics. 
+
+\subsection{Written homework (20\%)} Weekly homework will consist of textbook problems aligned with lectures, to help you practice new concepts and techniques. It will be collected in class, or it can be also submitted to Collab before the deadline.
+ 
+\subsection{Course engagement (10\%)}
+
+This is a very fast-paced course, and you should make every effort to not fall behind. Do not wait until you are completely lost. This is why the constant course engagement is important and will be graded. It consists of \texttt{Slack} activity (especially in answering other students' questions; see \hyperref[comm]{here}), pop quizzes during the discussion sessions, and other in-class participation.
+
+\subsection{3 midterm tests (15\% each, 45\% total)}
+
+The midterm tests will have similar taste as homeworks, and will test basic knowledge of the material. These 50-minute tests will be given during discussion sessions.
+
+A two-sided letter size formula sheet, hand-written by yourself, will be allowed on each midterm test and the final exam. Preparing this formula sheet will help you review the material, and paint a systematic picture in your head. I encourage you to collaborate on test preparation, but needless to say that during tests and exams each student must work individually.
+
+The use of calculators is not allowed on midterm tests and the final exam.
+
+\subsection{Final exam (25\%)}
+The final exam will be cumulative, but will emphasize topics covered after the last midterm.
+
+\section{Communication} \label{comm} 
+\subsection{\texttt{Slack}}
+
+My email is \href{mailto:petrov@virginia.edu}{petrov@virginia.edu}, but for the communication we will use \href{https://slack.com}{\texttt{Slack}} --- an industrial standard of work chats, with a web version and apps for all platforms. This will make me more accessible if you have questions, and also will let you answer questions of your fellow students. The course team is at \url{https://2310-f16-uva-petrov.slack.com/}. You'll get an invitation to join by e-mail, and it is expected that you register. Please let me know if you have issues with access. Some things to note:
+\begin{itemize}
+	\item You need an email address to use \texttt{Slack}, and it will be visible to other students in our 2 sections of the course. Normally it's your UVA email address (I'll send an invite there), but if you are not comfortable sharing your UVA email, let me know and I'll be happy to send invite to another address.
+	\item There are private messages where you can ask me (or Xiang) questions one-on-one. You can also create private groups with up to 9 people, which is good for homework collaboration (but read \hyperref[academic_integrity]{\texttt{here}} on collaboration).
+	\item Public messaging is separated into channels (\#general for class-wide questions/answers, a private channel for each of the two sections, and there are some more).
+	\item \textbf{Privacy}: Although \texttt{Slack} is a chatting app, it should be used professionally, especially in public discussions. The app supports private direct and group messages. But please note that in principle the admin (i.e., myself) can obtain access to \textbf{all} direct messages between members of the team. The procedure would involve sending a paper request via the usual mail, and everyone will be notified if the direct messages are accessed --- so this can happen only in extreme circumstances.
+\end{itemize}
+
+\subsection{Comments}
+If you have anonymous comments on anything related to the course, you can make them via Collab.
+
+\section{Approximate course plan}
+
+The homeworks are usually due on Thursdays, and most of the time will be assigned at least a week before the due date. The midterm tests are given during discussion sessions.
+
+\section{How to succeed in the course}
+
+\subsection{Resources}
+
+Here are some things to keep in mind which will help you succeed in the course:
+\begin{itemize}
+	\item Textbook has a lot of nice examples, and great pictures which will help you visualize the things you learn.
+	\item In addition, there are multiple web resources (Wikipedia, Khan Academy, just Google up!) which can complement the textbook's material and style of exposition.
+	\item Math tutoring center provides free tutoring for the Calculus III course. Location and schedule are here: \url{http://people.virginia.edu/~psb7p/MTCsch.html} (it opens on Aug 30 for Fall 2016).
+	\item 
+	Discussion sessions are highly important for the success in the course, with a chance to collaborate on due homeworks, and ask any questions you might have.
+	\item \texttt{Slack} is a great online tool to ask and answer questions about the course and collaborate with your fellow students.
+\end{itemize}
+
+\subsection{Collaboration}
+
+Group work on homework problems is allowed and strongly encouraged (unless otherwise stated for a particular assignment). Discussions are in general very helpful and inspiring. Nevertheless, before talking to others, get well started on the problems, and contribute your fair share to the process. 
+
+When completing the written assignments, everyone must write up his or her own solutions in their own words, cite any reference other than the textbook and class notes. Quotations and citations are part of the Honor Code for both UVa and the whole academic community. 
+
+It is very important that you truly understand the homework solutions you hand in, otherwise you will be unpleasantly surprised by your in-class test results.
+
+If you work together on homework, please write the names of your collaborators on the front.
+
+\label{academic_integrity}
+
+\section{Policies}
+
+\subsection{Late/make up work}
+Each assignment will have due date and time. Late assignments are not accepted. There will also be no make up midterm tests. However, if you have special needs/emergency/inevitable conflicts, please let me know as soon as possible, so we can arrange a workaround.
+
+\subsection{Honor Code}
+The University of Virginia Honor Code applies to this class and is taken seriously. Any honor code violations will be referred to the Honor Committee.
+
+\subsection{Special needs}
+
+All students with special needs requiring accommodations should present the appropriate paperwork from the Student Disability Access Center (SDAC). It is the student's responsibility to present this paperwork in a timely fashion and follow up with the instructor about the accommodations being offered. Accommodations for test-taking (e.g., extended time) should be arranged at least 5 business days before an exam.
 
 
 \end{document}
-
-
-
-
