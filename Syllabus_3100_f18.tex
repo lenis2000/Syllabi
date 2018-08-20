@@ -18,6 +18,8 @@
 \usepackage{datetime}
 \usepackage{cleveref}
 
+\usepackage[shadow]{todonotes}
+
 \usepackage{etoolbox}
 \patchcmd{\section}{\scshape}{\Large\itshape\bfseries}{}{}
 
@@ -42,9 +44,9 @@
 \begin{document}
 
 \title[MATH 3100: INTRODUCTION TO PROBABILITY]{MATH 3100: INTRODUCTION TO PROBABILITY}
-\author{Leonid Petrov\\Spring 2017}
-\date{\today, \currenttime.\\An up to date syllabus is always on \texttt{GitHub} at \url{https://github.com/lenis2000/Syllabi/blob/master/Syllabus_3100_s17.pdf}. For direct PDF download use \href{https://github.com/lenis2000/Syllabi/raw/master/Syllabus_3100_s17.pdf}{\texttt{this link}}.
-	\LaTeX{} source with \textit{changes} to the syllabus is \href{https://github.com/lenis2000/Syllabi/blob/master/Syllabus_3100_s17.tex}{\texttt{here}}
+\author{Leonid Petrov\\Fall 2018\\Sections 001 and 003}
+\date{Compiled on \today, \currenttime.\\An up to date syllabus is always on \texttt{GitHub} at \url{https://github.com/lenis2000/Syllabi/blob/master/Syllabus_3100_f18.pdf}. For direct PDF download use \href{https://github.com/lenis2000/Syllabi/raw/master/Syllabus_3100_f18.pdf}{\texttt{this link}}.
+	\LaTeX{} source with \textit{changes} to the syllabus is \href{https://github.com/lenis2000/Syllabi/blob/master/Syllabus_3100_f18.tex}{\texttt{here}}
 (click ``History'').}
 \maketitle
 
@@ -52,19 +54,10 @@
 
 \section{A mathematical study of randomness}
 
-How random is everything around us, and what chance do we have of understanding it? 
-What to do when you're not certain, and how to do it right?
-How many falling stars will you see as you walk outside one beautiful night? 
+How random is everything around us, and what chance do we have of understanding it? What to do when you're not certain, and how to do it right? How many falling stars will you see as you walk outside one beautiful night? 
 
-Probability theory is a mathematical study of uncertainty.
-It is a rigorous foundation of statistics --- and
-many areas of human knowledge operate in a language of statistics nowadays
-(yes, and robots use it, too!).
-The course introduces fundamental concepts, ideas, and techniques of probability theory.
-It  will provide you with foundational mathematical knowledge
-needed to address the questions above, and 
-will help you develop
-intuition about randomness.
+Probability theory is a mathematical study of uncertainty. It is a rigorous foundation of statistics --- and many areas of human knowledge operate in a language of statistics nowadays (yes, and robots use it, too!). The course introduces fundamental concepts, ideas, and techniques of probability theory. It will provide you with the foundational mathematical knowledge needed to address the questions above and will help you develop intuition about randomness.
+
 
 \begin{figure}[h]
 	\begin{tabular}{ccc}
@@ -113,20 +106,20 @@ intuition about randomness.
 		\draw[->, thick] (0,-.1)--(0,1.25);
 	\end{tikzpicture}}
 	has to do with this.
-	\item How to describe and quantify mutual dependence of random events,
+	\item How to describe and quantify the mutual dependence of random events,
 	and how to use such a description 
 	to infer properties of ``hidden'' random events.
 	\item How to apply probability theory to model real-life processes like queues
 	(consisting of people or requests at an internet server).
 	\item How to collaborate on solving probability problems in pairs, small groups, and online,
 	and present solutions clearly and efficiently.
-	\item How to design probability problems (for example, for the 
-	final exam), and evaluate problems presented by others.
+	% \item How to design probability problems (for example, for the
+	% final exam), and evaluate problems presented by others.
 	\item In what ways probability theory is connected to science,
 	engineering, and other branches of knowledge.
 \end{enumerate}
 
-\subsection*{Prerequisite} You should have taken at least one semester of calculus, because
+\subsection*{Prerequisite} You should have taken at least one semester of calculus:
 the study of random variables often requires single and double integrals
 and infinite series.
 
@@ -137,10 +130,10 @@ rigorous definitions, calculations, and proofs. However, the objects which we
 study are motivated by real-life applications, and so pure mathematical
 arguments often appeal to our common sense understanding of these objects.
 There will be opportunities to explore (and discover new) connections of the
-theory studied in the course with real world.
+theory studied in the course with the real world.
 
 Also, this course does not thoroughly discuss \emph{applications to statistics}
-(except maybe in the group project, see \Cref{group_project}).  Probability
+Probability
 theory focuses on developing the mathematical side, and statistics applies
 these mathematical theories to real data (coming from observations). In this
 course we will not discuss how to analyze data coming from observations ---
@@ -150,20 +143,27 @@ there are courses in statistics for that.
 
 \subsection{Meeting times}{\ }\\
 
-\begin{tabular}{|r|l|}
+\begin{tabular}{|r|l|l|}
 	\hline
-	\textbf{Class times}  & MoWe, 2:00PM -- 3:15PM
-                       \\  & Monroe Hall 124
+	&Section 003&Section 001
+	\\
+	\hline
+	\textbf{Class times}  & TuTh 12:30PM - 1:45PM &TuTh 2:00PM - 3:15PM
+                       \\  & Monroe Hall 116 & Monroe Hall 116
                        \\ \hline
-	\textbf{Midterm}   & We, February 22, 2:00PM -- 3:15PM
-                       \\  & Monroe Hall 124
+											 \textbf{Midterm 1}   & Thursday, \textbf{September 27}, 12:30-1:45 & Thursday, \textbf{September 27}, 2:00-3:15
+                       \\  & Monroe Hall 116& Monroe Hall 116
                        \\ \hline
-	\textbf{Final exam}   & Mo, May 8, 2:00PM -- 5:00PM
-                       \\  & Monroe Hall 124
+											 \textbf{Midterm 2}   & Thursday, \textbf{November 1}, 12:30-1:45 & Thursday, \textbf{November 1}, 2:00-3:15
+                       \\  & Monroe Hall 116& Monroe Hall 116
+                       \\ \hline
+											 \textbf{Final exam}   &  Tuesday, \textbf{December 11} & Monday, \textbf{December 17}
+											 \\ & 2:00PM-5:00PM &  9:00AM-12:00PM
+                       \\  & Monroe Hall 116& Monroe Hall 116 
                        \\ \hline
 \end{tabular}
-\hspace{10pt}\parbox{.42\textwidth}
-{
+
+\bigskip
 
 	\textbf{Instructor:} Leonid Petrov
 
@@ -171,24 +171,20 @@ there are courses in statistics for that.
 
 	\textbf{Office:} 209 Kerchof Hall
 
-	\textbf{Office hours:} We 12:50-1:50 and 3:30-4:30 (on most of the weeks),
-	and Thu 2:00-3:00 (more reliably than We);
+	\textbf{Office hours:} 
+	Tuesday 11am-12pm, Thursday 10am-11am
+	except the weeks when I'm \href{https://lpetrov.cc/2017/07/travel-2018/}{\texttt{traveling}};
 	or by appointment (you can make as many appointments as you want;
-	I am also always available on \texttt{Slack})
-}
+	I am also available on \texttt{Slack} most of the time)
 
 \subsection{About the instructor}
 I am an assistant professor in the Department of Mathematics at UVA, and I've
 been here since 2014. My research area is probability theory (very appropriate
 for this course!). More precisely, I am using exact formulas to study large
-random systems. I also like computer simulations of random systems, some
-examples are
-\href{http://faculty.virginia.edu/petrov//blog/2016/09/16/random-heart/}{\texttt{at
-this link}} or at my office door.  I'll be happy to tell you more if you're
+random systems. I also like computer simulations of random systems like 
+\href{https://d3m0khvr0ybm92.cloudfront.net/img/blog/heart/UVA_colors_small.png}{\texttt{this one}}.
+I'm happy to tell you more if you're
 interested.
-
-I also co-organize the UVA Math Club (\url{http://pi.math.virginia.edu/mathclub/}),
-let me know if you'd like to be added to the Math Club mailing list.
 
 \subsection{Textbook}
 
@@ -201,19 +197,22 @@ and for other helpful resources.
 
 Learning mathematics means \emph{doing} mathematics: during class meetings, on your own, and in groups.
 In this course, doing mathematics mainly amounts to solving problems.
-There are five aspects which are assessed in this course:
+There are four aspects which are assessed in this course:
 
-\subsection{Homework (20\%)}
+\subsection{Homework (15\%)}
 
 \begin{enumerate}[$\bullet$]
 	\item Weekly homework will consist of textbook and other problems aligned with lectures, to
 		help you practice new concepts and techniques. The homeworks are usually due on
-		Mondays, and will be assigned at least a week before the due
+		Thursdays, and will be assigned at least a week before the due
 		date. 
-	\item You are encouraged to work together on homework assignments (also can do it
-		online via \texttt{Slack}, which allows private groups of up to 9 people), to
-		take advantage of the challenge-defend discussions that help understand things
-		better.  However, each student needs to submit her/his own homework
+	\item You are encouraged to work together on homework assignments. 
+		This can be also done 
+		online via \texttt{Slack}, which allows private groups of up to 9 people.
+		Group work allows to 
+		take advantage of challenge-defend discussions which help understand things
+		better.  
+		However, each student needs to submit her/his own homework
 		assignments, and should work individually when writing them up to demonstrate
 		the understanding of the material.
 	\item The homeworks are graded ``coarsely'', that is,
@@ -238,69 +237,56 @@ There are five aspects which are assessed in this course:
 		who put reasonable effort into the homework
 		will get VG or G grades. 
 	\item 
-		The homeworks \emph{must be submitted only on Collab} (i.e., hard copies are not accepted). 
+		The homework \emph{must be submitted only on Collab} (i.e., hard copies are not accepted). 
 		Take pictures or scan your work,
 		make sure it's readable,
 		put it into a \emph{single PDF file with correct orientation},
 		and upload it before the deadline.
 %
-		Submitting work like this has many benefits: (1) you retain a paper copy to
+		Submitting work like this has many benefits:
+		(1) you retain a paper copy to
 		prepare for tests; 
 		(2) your submitted work is never misplaced or lost, and there is a digital trail;
 		(3) the grading will be much faster and will allow me to immediately
-		incorporate my impressions of the homeworks  into the class
-		discussions. Moreover, (4) knowing how to scan and make a single PDF file is a
+		incorporate my impressions of homework solutions into in-class
+		discussions. Moreover,
+		(4) knowing how to scan and make a single PDF file is a
 		valuable technical skill for the future: ask me and I can help you learn it.
 \end{enumerate}
 
-\subsection{Course engagement / quizzes (12.5$\pm$5\%)}
+\subsection{Course engagement / quizzes (14\%)}
 
 This includes short pop quizzes during lectures (at random days), 
 and activity in \texttt{Slack} (including answering other student's questions).
+There are no quizzes on the first week.
+After that,
+quiz days are determined by flipping independent random coins with 
+probability of success $p=0.4$. 
 
-\subsection{Group project (12.5$\pm$5\%)}\footnote{%
-	The course engagement and group project together add up to exactly 25\%, but 
-	I am not yet sure how these 25\% will be distributed; in particular, this 
-	depends on the number of pop quizzes we end up having.
-}\label{group_project}%
-There will be a group project on applications of probability theory.
-Its purpose is to put you in a collaborative environment,
-and help you explore how probability theory can be applied
-to real-world situations.
-In fact, nowadays applications of probability theory (along with statistics,
-and sometimes under the names of modeling or operations research)
-span almost every area of human knowledge and activity, so there is a lot to choose from.
+\subsection{Midterm tests (2 tests each worth 18\%; 36\% in total)}
 
-There will be about 10 groups. There are two tracks of this project
-for each group to choose from:
-you can either make a \emph{computer simulation} of an interesting random 
-system and then experimentally describe its behavior;
-or to come up with a probabilistic model of a real-world phenomenon, and 
-use the probabilistic \emph{analysis} of the model to quantitatively understand it.
-In the end each group will produce a report which will be peer-reviewed by other 
-groups, and will give a short presentation on the
-project.
+There are two midterm tests
+held
+during regular class times.
+They have
+similar taste as homework, and test basic knowledge of the material.
 
-\subsection{Midterm test (20\%)}
-
-The midterm test during regular class time
-on February, 22 will have similar taste as homeworks, and will test basic knowledge of the material.
-
-A two-sided letter size formula sheet, hand-written by yourself, will be
-allowed on the midterm test and the final exam. Preparing this formula sheet
-will help you review the material, and paint a systematic picture in your head.
+A two-sided letter size formula sheet, hand-written by yourself, is
+allowed on each midterm test and on the final exam. Preparing this formula sheet
+will help you review the material, and paint a systematic picture of the material in your mind.
 Formula sheets cannot contain any photocopied or printed material
 --- do everything by hand (of course, you can include any theorems, formulas, pictures, 
 examples, etc).
 The use of calculators (but not in mobile phones)
-is allowed on midterm test and the final exam.
+is allowed on the midterm tests and the final exam.
 
 I encourage you to collaborate on test preparation, but needless to say that
 during the test and the exam each student must work individually.
 
 \subsection{Final exam (35\%)}
 
-The final exam will be cumulative, but will put more focus on topics covered after the midterm.
+The final exam will be cumulative, but will put more focus 
+on topics covered after the last midterm.
 
 \subsection*{Letter grades}
 
@@ -314,24 +300,30 @@ will most likely be the following:
 	\end{tabular}
 \end{equation*}
 However, I reserve the right to slightly change this grade scale after the
-final exam to better incorporate into the letter grade 
-the possible fluctuations in the difficulty level of problems 
-in the midterm and the final exam.
+final exam.
+This may be needed
+to better incorporate into the letter grade
+possible fluctuations in the difficulty level of 
+midterms and the final.
 
 \section{Communication}
 \label{comm}
 
-\subsection{\texttt{Slack}}
+\subsection{Email}
 
-My email is \href{mailto:petrov@virginia.edu}{petrov@virginia.edu}, but for the
+My email address is \href{mailto:petrov@virginia.edu}{petrov@virginia.edu}.
+
+\subsection{Slack}
+However, 
+for the course
 communication we will use \href{https://slack.com}{\texttt{Slack}} --- an
 industrial standard of work messengers, with a web version and apps for all
 platforms. This will make me more accessible if you have questions, and also
 will let you answer questions of your fellow students. There will be course
-content available \emph{only} on \texttt{Slack} --- my
-lecture notes which I prepare for each class.
+content available \emph{only} on \texttt{Slack}, including scanned
+lecture notes which I usually prepare for every class.
 
-The course ``team'' is at \url{https://3100-s17-uva-petrov.slack.com}. You'll get
+The course ``team'' is at \url{https://math3100-f18-uva.slack.com}. You'll get
 an invitation to join by e-mail, and it is expected that you register.
 Please
 let me know if you have issues with access. 
@@ -341,42 +333,46 @@ the discussions of the course material.
 
 Some things to note: 
 \begin{enumerate}[$\bullet$] 
+	\item \textbf{Population}:
+		The \texttt{Slack} team will contain of students
+		of all 3 sections of 3100 this semester which is at least 130 students.
+		(However, all rules in this syllabus pertain to 2 of 3 sections 
+		run by L. Petrov.)
 	\item \textbf{Direct messages}:
 		There are direct messages where you can ask me questions
 		one-on-one. You can also create private groups with up to 9 people, which
 		is good for homework collaboration (but read \Cref{collaboration} on
 		collaboration).
-
-		\noindent Private channels (containing myself) invisible to other students
-		will be created for each group for discussions of the group project.
-
 	\item \textbf{Privacy}:
 		Although \texttt{Slack} is a messaging app, it should be used
 		professionally, especially in public discussions. The app supports private
 		direct and group messages. But please note that in principle the admin
 		(i.e., myself) can obtain access to \textbf{all} direct messages between
-		members of the team. The procedure would involve sending a paper request
-		via the usual mail, and everyone will be notified if the direct messages
-		are accessed --- so this can happen only in extreme circumstances.
+		members of the team. 
+		I assure you that this may be done only in extreme circumstances.
 	\item \textbf{Email address}:
 		You need an email address to use
 		\texttt{Slack}, and it may be visible to other students. 
 		Normally it's your UVA email address (I'll send an invite
-		there), but if you are not comfortable sharing your UVA email, let me know
+		there). If you are not comfortable using your UVA email let me know
 		and I'll be happy to send invite to another address.
-		And you can later change the email address yourself in the
+		You can later change the email address yourself in the
 		settings.
 	\item \textbf{Notifications}:
-		With \texttt{Slack}, it is very easy to not miss important announcements and direct messages, even if 
-		you don't check it all the time --- under the default settings, you will get notified (by email, too!)
-		about direct messages and mentions of your name. All announcements will have mentions of everybody
-		to draw attention. Also, you can change notification settings, but please remember that
+		With \texttt{Slack}, it is easy to not miss important announcements and direct messages, 
+		even if 
+		you don't check it all the time --- 
+		under the default settings, you will get notified (by email, too)
+		about direct messages and mentions of your name. 
+		All announcements will have mentions of everybody
+		to draw attention. 
+		Also, you can change notification settings, but please remember that
 		there will be sometimes very important activity in \texttt{Slack} that you don't want to miss.
 	\item \textbf{Public discussions}:
 		Public messaging is separated into channels
 		(\#general for class-wide questions/answers where you are welcome to post; 
 		\#announcements and \#class-notes where I will post relevant information;
-		special channels for midterm and final preparation, etc.).  
+		special channels for homework discussion, midterm and final preparation, etc.).  
 	\item \textbf{Many other features}: 
 		\texttt{Slack} supports reminders out of the box. 
 		You can ask it to remind yourself about a particular message, or 
@@ -386,7 +382,6 @@ Some things to note:
 		(like class announcements or problems I'll post there).
 		There are numerous third-party plugins one can add to \texttt{Slack}, and if you can 
 		think of good ones to add, please let me know so I can add them.
-
 \end{enumerate}
 
 \subsection{Collab}
@@ -408,13 +403,12 @@ them via Collab.
 The best way to learn in the course is to 
 come to all lectures, retain good memories 
 of what was in there
-(brief class notes which I will prepare for each lecture 
+(my brief class notes 
 will be made available on \texttt{Slack}),
 and do all the homework problems on your own or in collaboration.
-This will prepare you well for pop quizzes and tests, and will help you in 
-doing the group project.
+This will prepare you well for pop quizzes, midterms, and the final exam.
 
-\subsection{Textbook and other resources}
+\subsection{Main textbook}
 
 The textbook \emph{``Probability'' by Jim Pitman} is an excellent resource 
 to gain understanding of the course material. Some notes about it:
@@ -429,7 +423,11 @@ to gain understanding of the course material. Some notes about it:
 		are covered and which are omitted.
 \end{enumerate}
 
-There is another (free) \emph{textbook} with more problems and more material. It may be helpful if you want
+\subsection{Additional free textbook}
+
+There is another (free) \emph{textbook} 
+\emph{``Introduction to Probability'' by Grinstead and Snell}
+with more problems and more material. It may be helpful if you want
 a deeper understanding of some concepts, or if you want to read exposition of the familial material
 in a different style (which might be very helpful for better learning!):
 \begin{quote}
@@ -439,9 +437,22 @@ in a different style (which might be very helpful for better learning!):
 	Accompanying web page: \url{https://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/book.html}
 \end{quote}
 
+\subsection{Extra reading}
+
+The popular book
+\emph{``How Not to Be Wrong: The Power of Mathematical Thinking'' by Jordan Ellenberg}
+discusses how math touches every aspect of real life, and has 
+numerous nice examples related to probability and statistics. 
+I can recommend this nice book as a parallel reading. Some
+examples I learned from this book might be mentioned in class.
+(It absolutely not required that you buy or read this book.)
+
+\subsection{Other resources}
+
 There is a number of online resources which may help you while doing the homework:
 Khan Academy, Wikipedia, and many other 
 places contain lots of basic material on probability theory. Google
+in general
 is also a valuable resource.
 
 \subsection{Office hours and \texttt{Slack}}
@@ -462,35 +473,27 @@ for more information and schedule.
 \subsection{Collaboration on homework assignments}
 \label{collaboration}
 
-Group work on homework problems is allowed and strongly encouraged (unless
-otherwise stated for a particular assignment). Discussions are in general very
+Group work on homework problems is allowed and strongly encouraged.
+Discussions are in general very
 helpful and inspiring. Nevertheless, before talking to others, get well started
 on the problems, and contribute your fair share to the process. 
 
 When completing the written homework assignments, everyone must write up his or her own
-solutions in their own words, cite any reference other than the textbook and
-class notes. Quotations and citations are part of the Honor Code for both UVa
+solutions in their own words, and cite any reference 
+(other than the textbook and
+class notes) that you use. Quotations and citations are part of the Honor Code for both UVa
 and the whole academic community. 
 
 It is very important that you truly understand the homework solutions you hand
 in, otherwise you may be unpleasantly surprised by your in-class test results.
 
-If you work together on homework, please write the names of your collaborators
-on the front.
-
-\subsection{Collaboration on the group project}
-
-Collaboration is required to complete the group project,
-and the write-up of the report can also be done in group. 
-However, it is important that every member of the group understands the 
-nature and results of the project.
-
 \section{Approximate course schedule}
 
-\noindent Add/drop information: \url{http://www.virginia.edu/registrar/reginst1158.html#Deadlines}
+\noindent Add/drop information: \url{http://www.virginia.edu/registrar/reginst1188.html#Deadlines}
 \smallskip
 
-\noindent \textbf{NOTE: Please don't make travel plans conflicting with midterm (2/22) or final exam (5/8)}
+\noindent \textbf{NOTE: Please don't make travel plans conflicting with 
+the midterms or the final exam}
 
 \bigskip
 
@@ -504,70 +507,84 @@ nature and results of the project.
 \bigskip
 
 \begin{enumerate}[\bf{}{[}week 1{]}]
-	\item 1/18. Introduction. What is probability theory. Sections 1.1--1.3
+	\item 8/28, 8/30.
+		Introduction. 
+		What is probability theory. 
+		Sections 1.1--1.3
 
-	\item 1/23, 1/25. Advanced counting. Conditional probability and independence. Section 1.4
+	\item 9/4, 9/6. 
+		Advanced counting. 
+		Conditional probability and independence. 
+		Sections 1.1--1.4
 
-	\item 1/30, 2/1. Advanced counting. Bayes' rule. Repeated trials. Sections 1.5, 1.6, and 2.1.
-
-		\emph{2/1: discussion of the group project: real-world applications of probability theory}
+	\item 9/11, 9/13.
+		Advanced counting. 
+		Bayes' rule. 
+		Repeated trials. 
+		Sections 1.5, 1.6, and 2.1.
 		
-	\item 2/6, 2/8. Binomial distribution. Gaussian approximation. Sections 2.1, 2.2
+	\item 9/18, 9/20.
+		Binomial distribution. 
+		Gaussian approximation. 
+		Sections 2.1, 2.2
 
-		\emph{By 2/8, form groups up to 6 students for the project. Group lists due. Slack groups will be created}
+	\item 9/25.
+		Random variables. 
+		Expectation and conditional expectation. 
+		Sections 3.1--3.3, and 6.1
 
-	\item 2/13, 2/15. Random variables. Expectation and conditional expectation. Sections 3.1, 3.2, 3.3, and 6.1
+		\textbf{9/27 --- midterm 1; covers sections 1.1--1.6, 2.1, 2.2}
 
-		\emph{By 2/15, choose a real-world problem to analyze. Report this to the class in a 2-minute presentation.}
+	\item 10/2, 10/4.
+		Random variables. 
+		Expectation and conditional expectation. 
+		Sections 3.1, 3.2, 3.3, and 6.1
 
-	\item 2/20, \textbf{test on 2/22}. Poisson distribution and Poisson process. Sections 2.4, 3.4, and 3.5
-
-		\textbf{Sections covered in the test: 1.1--1.6, 2.1, 2.2, 2.4, 3.1--3.3, 3.5}
-
-	\item 2/27, 3/1. Poisson distribution and Poisson process. Coin tossing and geometric distribution. 
-		Sections 2.4, 3.4, and 3.5
-		
-		\emph{By 3/1, choose track: analysis or simulation, and formulate a draft problem/model 
-		associated with your real-world setting.
-		Short 1-page description of the problem due.}
-
-		\textbf{Spring break}
-
-	\item 3/13, 3/15. 
+	\item 10/11.
 		Variance, Chebyshev inequality, central limit theorem (normal approximation).
 		Continuous distributions.
 		Sections 3.3, 4.1.
-
-	\item 3/20, 3/22. Continuous distributions. General Gaussian approximation. 
-		Poisson processes, geometric, exponential and gamma distributions. Sections 2.4, 3.3, 3.4, 3.5, 4.1, and 4.2.
-
-		\emph{By 3/25, formulate a draft solution/simulation of your problem in the
-		simplest interesting case. 
-		Draft of the group report due.
-		Then continue working on how to extend the problem to other cases, 
-		to include more realistic situations.}
-
-	\item 3/27, 3/29. Continuous distributions. Change of variable and cumulative distribution function. Sections 4.4 and 4.5
-
-	\item 4/3, 4/5. Joint and conditional distributions. Introduction. Sections 5.1 and 5.2
-	
-		\emph{4/8: Final version of the group report due}
-
-	\item 4/10, 4/12. Joint and conditional distributions. 
-		Sections 6.1--6.3
-
-		\emph{4/17: Peer reviews due}
-	
-	\item 4/17, 4/19. Joint and conditional distributions. Sections 6.1--6.4.
 		
-	
-	\item 4/24, 4/26. Joint and conditional distributions. Bivariate normal distribution. 
-		Application to statistics. Correlation. Sections 5.3 and 6.5
-	
-	\item 5/1.
+	\item 10/16, 10/18.
+		Poisson distribution and Poisson process. 
+		Coin tossing and geometric distribution. 
+		Sections 2.4, 3.4, and 3.5
 
-		\emph{1-2 of the last classes --- group presentations}
+	\item 10/23, 10/25.
+		Poisson distribution and Poisson process. 
+		Coin tossing and geometric distribution. 
+		Sections 2.4, 3.4, and 3.5
 
+	\item 10/30, 11/1.
+		Poisson processes, geometric, exponential and gamma distributions. 
+		Sections 2.4, 3.3, 3.4, 3.5, 4.1, and 4.2.
+		
+		\textbf{11/1 --- midterm 2; covers sections 2.4, 3.1--3.5, 4.1, 4.2}
+
+	\item 11/6, 11/8.
+		Continuous distributions. 
+		Change of variable and cumulative distribution function. 
+		Sections 4.4 and 4.5
+		
+	\item 11/13, 11/15.
+		Joint and conditional distributions. 
+		Introduction. 
+		Sections 5.1, 5.2.
+
+	\item 11/20.
+		Joint and conditional distributions. 
+		Sections 6.1--6.4.
+	
+	\item 11/27, 11/29.
+		Joint and conditional distributions. 
+		Sections 6.1--6.4.
+	
+	\item 12/4, 12/6.
+		Joint and conditional distributions. 
+		Bivariate normal distribution. 
+		Application to statistics. 
+		Correlation. 
+		Sections 5.3 and 6.5
 \end{enumerate}
 
 \section{Policies}
@@ -583,7 +600,7 @@ you or other students (or me!). If you absolutely must use a laptop, please sit 
 Although \texttt{Slack} is a chatting app, it should be used professionally,
 especially in public discussions.  The app also supports private direct
 messages and I encourage to use them to collaborate on homework problems and
-projects. But please note that in extreme circumstances the admin (i.e.,
+test preparation. But please note that in extreme circumstances the admin (i.e.,
 myself) can obtain access to \textbf{all} direct messages between members of
 the team.  So just don't say anything on \texttt{Slack} that you wouldn't say
 in class.
@@ -615,321 +632,6 @@ least 5 business days before an exam.
 
 
 
-
-
-
-
-
-
-% \newpage
-%
-% \begin{center}
-%   {\large\textbf{Plan for the first class}}
-% \end{center}
-%
-% \note{see slack and notes in evernote}
-%
-% Go over policies, also about slack.
-%
-%
-% \newpage
-%
-% \begin{center}
-%   \hfill date
-%   \\
-%   {\large\textbf{Project 1: Group assignment}}
-%   \\
-%   \texttt{due dates: TBA by TBA, TBA by TBA, TBA by TBA}
-% \end{center}
-%
-% \medskip
-%
-% The purpose of this project is to put you in a collaborative environment,
-% and help you explore how probability theory can be applied
-% to real-world situations.
-% In fact, nowadays applications of probability theory (along with statistics,
-% and sometimes under the names of modeling or operations research)
-% span almost every area of human knowledge and activity, so there is a lot to choose from.
-%
-% There are two tracks to choose for this assignment: \emph{analysis} or \emph{simulation}.
-% The analysis track is suitable for anyone in the course, while
-% your group should choose the simulation track only if you
-% are comfortable with computer programming
-% and are able to code stochastic simulations (specific programming language does not matter).
-%
-% There are following general steps to this project:
-% \begin{enumerate}[\bf{}1.]
-%   \item Form groups of up to 6 students by TBA, and let me know.
-%   I will organize private group channels in \texttt{Slack} in which you can communicate.
-%   and I will also be present there to help you at any time.
-%   (Note: you can also create a private direct message group
-%   to discuss the problem completely on your own.)
-%   \item Choose a real-world situation or problem that you would like to
-%   translate into probabilistic language. This can be related
-%   to some topic from your other course, or a problem you care about --- so anything you find interesting
-%   (well, you should at least feel that some probabilistic approach could be applied here).
-%   Do this step in your group by TBA, and let me know. We will briefly discuss
-%   problems you choose in class on TBA.
-%   \item In the next step, by TBA, you need to choose a track (analysis or simulation)
-%   and formulate a probabilistic system (in mathematical language)
-%   related to your real-world problem. In this step you will inevitably
-%   oversimplify the real-world situation, and this is fine --- because we want
-%   mathematics to say at least something about your problem.
-%   (Note: you can always complicate things
-%   afterwards a little, don't worry about oversimplifying in the beginning.)
-%   In this step communication with me is very important, since I have a good idea
-%   which problems are approachable with tools we are learning in this course.
-%   \item The next step (by TBA) depends on your track:
-%   \begin{itemize}
-%     \item In the analysis track, you should present a solution to the probability problem you formulated,
-%     at least in the very simple case.
-%     This solution can use any computer algebra system, etc., so that
-%     you are not restricted only to problems you can solve by hand.
-%
-%     \item In the simulation track, you will build a computer simulation
-%     of your situation. This track could in principle allow you to
-%     take a more complicated model
-%     than the analysis track, but this will then require simulating it in detail.
-%   \end{itemize}
-%   This step will lead to a report,
-%   first draft of which is due by TBA,
-%   and the
-%   final version due by TBA.
-%   The work on the analysis or simulation should tap back into the real-world problem,
-%   and your work here should lead to you being able to say at least something about the real-world model
-%   you started from.
-%   \item Moreover, on TBA we will have presentations in which one member of each group
-%   will have 10 minutes to briefly explain the project and conclusions.
-% \end{enumerate}
-%
-% \razdel{Criteria}
-%
-% Participation in this project and timely submitting your work is very important.
-% The most important part of the project in terms of grading is to get your math
-% right --- to accurately formulate the problem or the system you're going to simulate,
-% and present correct and accurate reasoning and discussion.
-% It is also important that you understand and articulate in which aspects you are oversimplifying
-% the real-world problem to get a mathematically tangible model.
-% Because you are only beginning to learn probability theory
-% and because the time is limited, your models inevitably will lack some (or even most) of the
-% properties of a real-world problem --- and this is fine, as long as
-% you understand where your simplifications were performed.
-% If research and obtain
-% any outside numerical/qualitative data to input into your models,
-% please cite the source (any format)
-% to explain where this input comes from.
-%
-% Since the presentation part of the project falls on the shoulders of one member of each
-% group, this activity counts as for training purposes only.
-%
-% I expect that most groups will get a full grade on this assignment,
-% and stellar work will also receive bonus points.
-%
-% \razdel{Analysis example}
-%
-% Let me give you one good example of a real-world problem which can be turned into a
-% probability problem (this is more for the analysis track).
-% As we know, the airlines sell more tickets to a flight than there are
-% seats on it. This is because some passengers do not show up for the flight,
-% and so company gets free money. But if in fact more passengers show up for the flight,
-% then the company has to pay some of them to not fly, and rebook them to different flights,
-% or maybe even pay for the hotel --- so this costs something.
-% This leads to a simple probability problem:
-% \begin{quote}
-%   Assume that there are 300 seats on the plane,
-%   and the company sells 320 tickets. Let each person
-%   independently decide to show or to not show to the flight
-%   with probability $0.95$ (i.e., with probability $0.05$ the person does not show up).
-%   What is the (approximate) probability that the flight is overbooked?
-% \end{quote}
-% The solution of this problem is the following:
-% \begin{quote}
-%   The number of people
-%   showing up for the flight is equal to $S_{320}$, the binomial
-%   random variable corresponding to 320 coin tosses, with probability
-%   of success $p=0.95$. The mean is $320\cdot p=304$, and the standard deviation
-%   is $\sqrt{320\cdot p(1-p)}=3.9$.
-%   We see that by the Gaussian approximation (the part ``$+\frac12$'' is the correction):
-%   \begin{equation*}
-%     P(S_{320}>300)=P\left(\frac{S_{320}-304}{3.9}>\frac{300+\frac12-304}{3.9}\right)\approx
-%     P(Z>-0.897436)\approx 0.82.
-%   \end{equation*}
-%   That is, the flight is overbooked with probability $0.82$.
-%   This means that the airline is probably selling to many
-%   tickets, and to avoid overbooking with this high probability it maybe should
-%   sell less of them.
-% \end{quote}
-% In formulating this problem, we made the following assumptions/simplifications:
-% \begin{itemize}
-%   \item The airline company has to decide in advance
-%   how many tickets it would sell, while in reality this decision can be made
-%   while the ticket sale is still ongoing.
-%   \item Each passenger is independent in his/her decision to fly or not to fly.
-%   This is unrealistic because many passengers travel in families.
-%   \item The exact parameters $p=0.95$ and that the airline sells $320$
-%   tickets are completely arbitrary, and it would be nice to find some actual numbers
-%   if possible (especially for $p$).
-%   \item The Gaussian approximation is quite accurate for the binomial
-%   random variable in the problem, but using a computer algebra system
-%   you can actually compute the exact probability
-%   of overbooking --- it is $0.817679$, which is indeed very close.
-% \end{itemize}
-%
-% The example above (problem, solution, discussion of assumptions/simplifications,
-% plus a
-% discussion of how the probability
-% problem allows to infer something about the
-% real-world problem we started with)
-% is good as a first draft of a successful project.
-% That is, a first attempt is to just consider a very simple situation,
-% and be able to say at least something.
-%
-% A successful project growing out of this example
-% should also contain the following:
-% \begin{itemize}
-%   \item A quick research (start with googling) on what is the actual probability $p$ is.
-%   (As with any outside data, please cite the source if you are using this data.)
-%   \item Discussion/modifications for the cases when the decisions
-%   made by passengers to not show are not independent --- i.e.,
-%   a typical flight contains of some number of individual travelers, some number of
-%   pair travelers, etc.; a quick research of how a realistic distribution
-%   of passenger groups looks like would be nice.
-%   \item Added cost factors and cost analysis. This should start with a quick research
-%   on how much more it costs airlines to handle overbooked passengers vs.
-%   average ticket cost (in fact, ticket costs also rise
-%   closer to the date of the flight, and this is another aspect that could be considered).
-%   Then in the analysis above you can find optimal (from the cost perspective)
-%   number of tickets to sell to a 300-seat flight.
-%   This part exactly corresponds to a probability analysis being able to
-%   say something about the real-world problem.
-% \end{itemize}
-% We see that there are many directions
-% into which this could
-% grow (and many more not mentioned above!), but accurately considering all the above additional points,
-% and complementing an exploration of
-% some of these directions
-% with correct math would count as a
-% successful project.
-%
-% \razdel{Simulation example}
-%
-% TBA
-%
-% \newpage
-%
-% \begin{center}
-%   \hfill date
-%   \\
-%   {\large\textbf{Project 2: Final exam problem}}
-%   \\
-%   \texttt{due dates: TBA by TBA, TBA by TBA, TBA by TBA}
-% \end{center}
-%
-% \medskip
-%
-% After most of the course is over, it is time for me to
-% compose the final exam --- with your help.
-% I invite you to reflect on topics discussed and skills developed this semester,
-% and compose one problem for the final exam. The problems you come up with
-% will be added to the list of review problems,
-% and some will actually end up as a part of the final exam.
-%
-% \razdel{Part 1. Deep solution and evaluation of a textbook problem}
-%
-% To be able to design your own problem, first
-% analyze an existing one.
-% \textbf{Pick a problem} from the textbook which you didn't see before
-% (you may even pick a problem at random until you encounter one you never saw).
-% Read the questions below. Then,
-% using the tools you learned during lectures and
-% from the textbook, \textbf{solve this problem and get an answer}.
-% If needed, you can consult any other sources
-% or your fellow students,
-% use calculator/computer (no matter how advanced) ---
-% to make sure you got the solution and the answer right.
-%
-% Briefly respond to the following questions (please read them before solving!):
-%
-% \begin{enumerate}[\bf{}1.]
-%   \item What knowledge and skills/tools did you need to solve this problem?
-%   \item Are there any nontrivial observations/ideas needed to solve the problem? Is it too hard? Too easy?
-%   \item (if applicable) Is the answer given in the textbook correct? Is it complete? Is it clearly understandable? Was it hard to compare your answer with the textbook's one (even if
-%   you got a correct answer, it could be in a different form)?
-%   \item Are there common-sense mechanisms which can help ``debug'' your answer?
-%   (like: ``if the problem asks for a probability, it must be between 0 and 1'')
-%   \item Out of 45 students in our class, how many do you think will solve the problem and get the right answer if it is given as a part of the final
-%   exam?
-%   \item Is the problem applicable to real life/other branches of knowledge? How/why not?\\
-%   (\emph{optional}) Could you imagine a real-world situation in which a similar problem can be applicable?
-%   \item (\emph{optional})
-%   Time
-%   how long it took to write a draft of the solution
-%   and get an answer, and share this information with me.
-% \end{enumerate}
-%
-% \textbf{Submit the problem, a write-up of its solution, and brief answers to the above questions on Collab by TBA}.
-%
-% \emph{Criteria}:
-% Make sure to present a correct and complete solution.
-% Your write-up of a solution
-% must be clear and concise. If you use a random variable or event not given
-% in the statement of the problem, you must first define that random variable or event.
-% If you have to say something that is not a mathematical expression, say it in complete English sentences.
-% Most successful write ups will take some time to get on the page.
-% The work in this part will receive one of the two marks:
-% ``poor/no work'' and ``good''.
-%
-% \razdel{Part 2. Designing your own problem}
-%
-% Think about the problem you solved in part 1 --- should this or a similar
-% problem appear on the final exam? Or would you modify it in some way?
-% Think about the topics in the course, and pick the one you like most.
-% \textbf{Sign up} for this topic at
-% \url{https://TBA} by TBA (first come, first serve).
-% Then \textbf{compose a good problem on this topic}.
-%
-% Aim for a medium-level problem (not too easy, not too hard).
-% Try to invent a more realistic problem, which is somewhat related to
-% other areas of science or to a real-world situation.
-%
-% \emph{Note}: If you choose to make your problem similar to one of the textbook
-% or homework/quiz problems, try to make the context of the problem
-% closer to a real-world situation. That is, imagine a situation in the real life
-% when a similar problem might arise, and use it as a setup.
-%
-% \textbf{Submit your problem, its brief solution and answer on Collab by TBA}.
-%
-% The solution your present in part 2 does not have to be as clear and
-% detailed as in part 1, just make sure it is understandable
-% and the answer is correct.
-%
-% \emph{Criteria}:
-% The problem you submit will receive one of the three marks:
-% ``poor/no work'', ``good'', and ``great''.
-% To avoid getting a ``poor'' mark,
-% the language of the problem should be clear, concise, and unambiguous.
-% Make sure that there is no way that some of students in our class
-% can read the problem wrong (you can seek quick feedback from other students on that
-% while you're working on your problem).
-% An advantage is if the problem describes a real-world situation.
-% Too easy or unnecessarily hard
-% problems will not be ranked ``great''.
-% Make sure to present a correct and complete solution to the problem.
-%
-% \razdel{Part 3. Peer evaluation}
-%
-% You will receive a problem composed by another student, together with the answer.
-% \textbf{Solve the problem, write its solution in detail similarly to part 1,
-% and answer the questions as in part 1}. Same criteria as in part 1 will be applied.
-%
-% \textbf{Submit this work on Collab by TBA}. Note that your feedback can and likely will be shared
-% with the author of the problem.
-% \textbf{On 5/1 in our last class we will have a discussion
-% wrapping up the project, which will also be a
-% review session for the final exam}.
-%
-% % I won't give preferences to problems I choose, just mention (after the exam). This is because I have to
-% % balance the exam, and there are much less problems in the exam than what I'll receive.
 
 
 
