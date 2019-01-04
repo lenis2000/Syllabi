@@ -50,3 +50,4 @@ fi
 
 # Compile latex stuff
 latexmk -pdf -silent -synctex=1 Syllabus_7310_s19.tex
+git add Syllabus_7310_s19.pdf
