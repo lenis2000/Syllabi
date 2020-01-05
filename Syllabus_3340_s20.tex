@@ -1,0 +1,56 @@
+\documentclass[oneside,11pt]{amsart}
+\usepackage[utf8]{inputenc}%
+\usepackage[english]{babel}%
+\usepackage{amsmath,amssymb,amsthm,amsfonts}%
+\usepackage[unicode]{hyperref}%
+\usepackage{mathrsfs,bbm}%
+\usepackage{paralist}
+\usepackage{color}
+\usepackage{longtable}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\small\raggedright\arraybackslash}m{#1}}
+\newcolumntype{T}[1]{>{\footnotesize\raggedright\arraybackslash}m{#1}}
+\usepackage{stmaryrd}%
+%\usepackage{refcheck}
+\usepackage{graphicx}
+\usepackage[DIV14]{typearea}
+\usepackage{multicol,tikz}
+\usepackage{datetime}
+\usepackage{cleveref}
+
+\usepackage[shadow]{todonotes}
+
+\usepackage{etoolbox}
+\patchcmd{\section}{\scshape}{\Large\itshape\bfseries}{}{}
+
+\usepackage{caption}
+\captionsetup{labelformat=empty,labelsep=none}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!red,
+  urlcolor=green!60!black
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\synctex=1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\score}[1]{\textit{#1}\addtocounter{totalscore}{#1}}
+\newcommand{\razdel}[1]{\smallskip\underline{\textbf{#1:}}\smallskip}
+
+\newcommand{\note}[1]{{\sf{}\color{blue}(#1)}}
+
+\begin{document}
+
+\title[MATH 3340: COMPLEX VARIABLES WITH APPLICATIONS]{MATH 3340: COMPLEX VARIABLES WITH APPLICATIONS}
+\author{Leonid Petrov\\Spring 2020}
+\date{Compiled on \today, \currenttime{} (in whatever timezone I was at that time).\\An up to date syllabus is always on \texttt{GitHub} at \url{https://github.com/lenis2000/Syllabi/blob/master/Syllabus_3340_s20.pdf}. For direct PDF download use \href{https://github.com/lenis2000/Syllabi/raw/master/Syllabus_3340_s20.pdf}{\texttt{this link}}.
+	\LaTeX{} source with \textit{changes} to the syllabus is \href{https://github.com/lenis2000/Syllabi/blob/master/Syllabus_3340_s20.tex}{\texttt{here}}
+(click ``History'').
+\\Note that this PDF has green clickable links.}
+\maketitle
+
+
+
+\end{document}
