@@ -1,0 +1,677 @@
+\documentclass[oneside,11pt]{amsart}
+\usepackage[utf8]{inputenc}%
+\usepackage[english]{babel}%
+\usepackage{amsmath,amssymb,amsthm,amsfonts}%
+\usepackage[unicode]{hyperref}%
+\usepackage{mathrsfs,bbm}%
+\usepackage{paralist}
+\usepackage{color}
+\usepackage{longtable}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\small\raggedright\arraybackslash}m{#1}}
+\newcolumntype{T}[1]{>{\footnotesize\raggedright\arraybackslash}m{#1}}
+\usepackage{stmaryrd}%
+%\usepackage{refcheck}
+\usepackage{graphicx}
+\usepackage[DIV17]{typearea}
+\usepackage{multicol,tikz}
+\usepackage{datetime}
+\usepackage{cleveref}
+
+\usepackage[shadow]{todonotes}
+
+\usepackage{etoolbox}
+\patchcmd{\section}{\scshape}{\Large\itshape\bfseries}{}{}
+
+\usepackage{caption}
+\captionsetup{labelformat=empty,labelsep=none}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!red,
+  urlcolor=green!60!black
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\synctex=1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\score}[1]{\textit{#1}\addtocounter{totalscore}{#1}}
+\newcommand{\razdel}[1]{\smallskip\underline{\textbf{#1:}}\smallskip}
+
+\newcommand{\note}[1]{{\sf{}\color{blue}(#1)}}
+
+\begin{document}
+
+\title[MATH 3100: INTRODUCTION TO PROBABILITY]{MATH 3100: INTRODUCTION TO PROBABILITY}
+\author{Leonid Petrov\\Fall 2020\\Sections 002 and 003}
+\date{Compiled on \today, \currenttime.\\An up to date syllabus is always on \texttt{GitHub} at \url{https://github.com/lenis2000/Syllabi/blob/master/Syllabus_3100_f20.pdf}. For direct PDF download use \href{https://github.com/lenis2000/Syllabi/raw/master/Syllabus_3100_f20.pdf}{\texttt{this link}}.
+	\LaTeX{} source with \textit{changes} to the syllabus is \href{https://github.com/lenis2000/Syllabi/blob/master/Syllabus_3100_f20.tex}{\texttt{here}}
+(click ``History'').}
+\maketitle
+
+\bigskip
+
+\section{A mathematical study of randomness}
+
+How random is everything around us, and what chance do we have of understanding it? What to do when you're not certain, and how to do it right? How many falling stars will you see as you walk outside one beautiful night? 
+
+Probability theory is a mathematical study of uncertainty. It is a rigorous foundation of statistics --- and many areas of human knowledge operate in a language of statistics nowadays (yes, and robots use it, too!). The course introduces fundamental concepts, ideas, and techniques of probability theory. It will provide you with the foundational mathematical knowledge needed to address the questions above and will help you develop intuition about randomness.
+
+
+\begin{figure}[h]
+	\begin{tabular}{ccc}
+		\includegraphics[height=.32\textwidth]{img/Bond_percolation_p_51.png}
+		&\hspace{10pt}\includegraphics[height=.32\textwidth]{img/Amas_de_percolation_gray.png}
+		&\includegraphics[angle=90,height=.32\textwidth]{img/RW1.png}
+	\end{tabular}
+	\def\figurename{}
+	\caption{Examples of random structures: bond percolation
+	\href{https://en.wikipedia.org/wiki/Percolation_theory}{\texttt{close-up}}
+	(left),
+	at a \href{https://commons.wikimedia.org/wiki/File:Amas_de_percolation.png}{\texttt{larger scale}} (center),
+	and
+	a 
+	\href{https://en.wikipedia.org/wiki/Random_walk\#Lattice_random_walk}{\texttt{random walk}}
+	(see also a
+	\href{https://upload.wikimedia.org/wikipedia/commons/f/f3/Random_walk_2500_animated.svg}{\texttt{simulation}} 
+	of a random walk).
+	\tiny{Note:
+	this PDF has green clickable links, like in the previous sentence.}
+	}
+\end{figure}
+
+\subsection*{What you will get from this course}
+
+\begin{enumerate}[\bf{}1.]
+	\item Mastery of basic probability concepts:
+	\begin{enumerate}[(a)]
+		\item What is a probability space and how to translate commonly-sounding problems into this language;
+		\item How to count (in an advanced way) to compute probabilities;
+		\item What is a random variable, a probability distribution,
+		and what are their main quantitative properties;
+		\item 
+		How commonly encountered probability 
+		distributions (binomial, Poisson, exponential, Gaussian) look like and behave,
+		what are 
+		their properties, and in which situations they typically arise.
+	\end{enumerate}
+
+	\item How large random systems behave, and what the 
+	bell-shaped curve
+	\raisebox{-8pt}{\begin{tikzpicture}
+		[scale=.7]
+		\draw[ultra thick, domain=-.9:.9] plot[samples=300] ({\x}, {2.7128^(-10*\x*\x)});
+		\draw[->, thick] (-1.01,0)--(1.05,0);
+		\draw[->, thick] (0,-.1)--(0,1.25);
+	\end{tikzpicture}}
+	has to do with this.
+	\item How to describe and quantify the mutual dependence of random events,
+	and how to use such a description 
+	to infer properties of ``hidden'' random events.
+	\item How to apply probability theory to model real-life processes like queues
+	(consisting of people or requests at an internet server).
+	\item How to collaborate on solving probability problems in pairs, small groups, and online,
+	and present solutions clearly and efficiently.
+	% \item How to design probability problems (for example, for the
+	% final exam), and evaluate problems presented by others.
+	\item In what ways probability theory is connected to science,
+	engineering, and other branches of knowledge.
+\end{enumerate}
+
+\subsection*{Prerequisite} You should have taken at least one semester of calculus (MATH 1320 level):
+mathematical study of random variables often requires single and double integrals
+and infinite series.
+
+\subsection*{What this course is and what it is not}
+
+This course in probability \emph{theory} belongs to pure mathematics, with
+rigorous definitions, calculations, and proofs. However, the objects which we
+study are motivated by real-life applications, and so pure mathematical
+arguments often appeal to our common sense understanding of these objects.
+There will be opportunities to explore (and discover new) connections of the
+theory studied in the course with the real world.
+
+Also, this course does not thoroughly discuss \emph{applications to statistics}
+Probability
+theory focuses on developing the mathematical side, and statistics applies
+these mathematical theories to real data (coming from observations). In this
+course we will not discuss how to analyze data coming from observations ---
+there are courses in statistics for that.
+
+\section{Necessary information}
+\label{sec:necc}
+
+\subsection{Meeting times}{\ }\\
+\label{sub:meeting_times}
+
+\begin{tabular}{|r|l|l|}
+	\hline
+	&Section 002&Section 003
+	\\
+	\hline
+	\rule{0pt}{16pt}
+	\parbox{.26\textwidth}{\textbf{Class times}\\
+	August 25 --- November 24}
+	& TuTh 11:00AM - 12:15PM &TuTh 12:30PM - 1:45PM
+	\\[8pt] \hline
+	\textbf{Midterm 1}   & September 22, 11:00--12:30 & September 22, 12:30--2:00
+                       \\ \hline
+											 \textbf{Midterm 2}   & October 22, 11:00--12:30 & October 22, 12:30--2:00
+											 \\ \hline
+											 \textbf{Final exam}   &  
+										 Thursday, \textbf{December 10, 2020}	
+											 & 
+											 Wednesday, \textbf{December 02, 2020}	
+											 \\ & 9:00AM-12:00PM &  2:00PM-5:00PM
+                       \\ \hline
+\end{tabular}
+
+\bigskip
+
+	\textbf{Instructor:} Leonid Petrov
+
+	\textbf{Questions to the instructor:} We use \texttt{Piazza}, see \Cref{comm}
+
+	\textbf{Office hours:} 
+	Mondays 2:30--3:30, 
+	Thursdays 9--10,
+	and by appointment $\downarrow$
+	
+	You can automatically schedule an office hours appointment 
+	at \href{https://lpetrov.cc/teaching/}{\texttt{this page}} (you don't need an appointment for 
+	regular office hours).
+	You can make as many appointments as you need throughout the semester. Each appointment
+	must be made at least 3 hours prior to the time of the appointment.
+
+	Office hours happen in zoom at \href{https://virginia.zoom.us/j/96380060116?pwd=eFZoc0ZOc2JmRWw3R0o4WkpSMHVqUT09}{\texttt{this meeting}}.
+	Office hours meetings are not recorded.
+	
+\subsection{About the instructor}
+I am an Associate Professor in the Department of Mathematics at UVA, and I've
+been here since 2014. My research area is probability theory (very appropriate
+for this course!). More precisely, I am using exact formulas to study large
+random systems. I also like computer simulations of random systems like 
+\href{https://d3m0khvr0ybm92.cloudfront.net/img/blog/heart/UVA_colors_small.png}{\texttt{this one}}.
+I'm happy to tell you more if you're
+interested.
+
+\subsection{Textbook}
+Anderson, Sepp\"al\"ainen, Valk\'o, \emph{Introduction to Probability}, 1st Edition.
+
+ISBN-13: 978-1108415859; 
+ISBN-10: 9781108415859.
+
+See also \Cref{success} below for discussion 
+of how we'll use the textbook,
+and for other helpful resources.
+
+\subsection{Course structure and delivery}
+
+\begin{itemize}
+	\item \textbf{Lectures} are pre-recorded and are uploaded to Panopto (collab $\to$ lecture capture). 
+		Lectures will be recorded via zoom, and I might post to Piazza the information
+		on when they are recorded, so that if you are interested and able you can watch lectures
+		live.
+		Watching lectures (live or recorded)
+		for each week is a part of the homework.
+
+		A summary of the lectures content is posted at 
+		\url{https://github.com/lenis2000/Math3100_F20_LectureNotes/blob/master/lecture_notes.pdf})
+		(\href{https://raw.githubusercontent.com/lenis2000/Math3100_F20_LectureNotes/master/lecture_notes.pdf}
+		{\texttt{link to automatically download}}).
+	\item \textbf{Discussion meetings} are during scheduled class times
+		in zoom (scheduled via collab
+		$\to$ online meetings; I'll email links to you each day, too). At
+		discussion
+		meetings, I summarize content from lectures, answer your 
+		questions, and 
+		post polls (multiple choice pop quizzes). Then most of the time
+		of the meeting is dedicated to working together on the week's problem set in random breakout rooms.
+		Submitting solutions to the problem set is another part of the homework.
+
+		Discussion meetings are not recorded (zoom does not record breakout rooms well). 
+		Please go to the meeting at your scheduled class time (11 or 12:30).
+		However, if more convenient then 
+		you can join another session on the same day.\footnote{If there is drastic imbalance
+		in participation numbers, then this convenience will have to be removed.}
+
+		Participation and active role in discussion meetings (including having 
+		your camera on)
+		will be rewarded by points towards the final grade.
+		See \Cref{sub:zoom} below for zoom suggestions and policies.
+
+	\item \textbf{Off-time} discussions and questions 
+		occur on piazza (collab $\to$ piazza), please sign up there 
+		(\url{https://piazza.com/virginia/fall2020/20fmath3100sec23})
+		and start
+		posting and answering questions. 
+		Participation and active role in piazza will be rewarded by points towards the final grade.
+
+		\textbf{Office hours} is an excellent resource to get help with problem sets,
+		or get any questions answered. There are regular office hours
+		on Mondays and Thursdays, and you can also sign up for office hours appointment (see \Cref{sub:meeting_times}
+		for links).
+
+	\item \textbf{Midterm tests and final exam} are proctored over zoom (recorded), and are open book/notes. 
+		The problems are available on collab $\to$ assignments at the specified time, and 
+		should be scanned and uploaded by the deadline. There are extra 15 minutes budgeted at the 
+		end of each test for you to handle the uploading.
+
+		Midterms happen in the same zoom meetings as the usual classes. There are special zoom meetings 
+		for the final exam.
+\end{itemize}
+
+This semester is very unusual, and I understand that there may be circumstances 
+preventing you from fully participating in all aspects of the course.
+It is best to communicate these to me as soon as possible so that we can 
+find a workaround.
+
+\section{Assessing your learning}
+
+Learning mathematics means \emph{doing} mathematics: during class meetings, on your own, and in groups.
+In this course, doing mathematics mainly amounts to solving problems.
+The following aspects are assessed in this course:
+
+\subsection{Course engagement (25\%)}
+
+Due to the online nature of the class, I am putting a lot of weight
+into the various engagement components which ask you to interact with 
+your peers (and the instructor) while learning the material. This includes:\footnote{It is 
+hard to predict how the categories below are going to be weighted relatively to each other
+depending on the amount of activity throughout the semester; but they sum up to 25\% in total.}
+
+\begin{itemize}
+	\item \textbf{Piazza}. Ask questions about the class, and answer others' questions.
+	\item \textbf{Zoom participation}. Participation in discussion meetings is recorded automatically by zoom, 
+		so make sure to name yourself in zoom so that I can match your name to the class roster
+		(Or enter logged in through collab and not just by the link).
+		I understand that many people cannot participate in all class meetings due to various
+		circumstances. If needed,
+		you can come to meetings of another section (11:00 or 12:30, respectively).
+		Even that flexibility might not be enough, so I expect to give full credit for zoom participation 
+		if you come (for a significant time, not just 3 minutes) to 18 class meetings out of 25 total.
+		(There are 27 classes, but this includes 2 midterms.)
+	\item \textbf{Engagement at zoom meetings}. 
+		Have your camera on if you are comfortable doing so,
+		ask questions about the recorded
+		lecture, be active in discussing possible ideas to solve problems at breakout sessions, 
+		report solutions when we get back from breakout rooms.
+	\item \textbf{Quizzes / polls during zoom meetings}. 
+		Prior to each class, you are expected to have watched the corresponding recorded lecture.
+		I will perform polls (in zoom or by another tool)
+		to make sure you are paying attention to the material. 
+		Poll answers are recorded and will be included in the final grade calculation.
+	\item \textbf{Office hours}. Come to office hours (if needed, 
+		sing up for appointments, see \Cref{sub:meeting_times}) 
+		with questions about problem sets and recorded lectures.
+		I am always happy to discuss your ideas and explain math.
+\end{itemize}
+
+I expect that most people who are paying attention to the class,
+come to meetings, and interact with peers, will get close to full credit for
+the course engagement.
+
+\subsection{Problem sets (18\%; 11 problem sets; lowest one dropped)}
+
+\begin{enumerate}[$\bullet$]
+	\item Weekly problem sets consist of textbook and other problems aligned with lectures, to
+		help you practice new concepts and techniques. 
+		The written solutions are due on
+		Tuesdays:
+		\begin{quote}
+			September 1, 8, 15;
+			\\
+			September 29, October 6, October 13, October 27;
+			\\
+			November 3, 10, 17, 24
+		\end{quote}
+
+
+		Problem sets are posted by Mondays the previous week, and 
+		you will be working on them during the discussion times in class meetings (in random breakout rooms).
+	\item You are encouraged to work together on problem sets in the off-times, too,
+		in piazza and by any other means.
+		Group work allows to 
+		take advantage of challenge-defend discussions which help understand things
+		better.
+		However, each student needs to submit her/his own written work, 
+		and should write this up individually. 
+		This helps better retain the material and prepare for tests.
+	\item The written solutions are graded ``coarsely'', that is,
+		each problem set will be assigned one of four grades: 
+		\begin{equation*}
+			\begin{tabular}{l|l|l|l|l}
+				Grade & VG (very good) & G (good) & OK   & N \\
+				\hline
+				& \parbox{.21\textwidth}{All problems solved correctly with minor issues like arithmetic mistakes, and solutions explained
+				in full detail}
+				& \parbox{.21\textwidth}{Most problems solved correctly, and solutions explained in reasonable (close to full) detail}
+				& \parbox{.21\textwidth}{ {\ }\\More than $3/4$ of problems attempted, many 
+				solutions are incorrect, incomplete, or not explained in detail, 
+				but the work displays adequate understanding of most of the material\\{}}
+				& \parbox{.21\textwidth}{Work not submitted on time, or less than $3/4$ of problems 
+				attempted, or most solutions are incomplete, or work clearly displays lack of understanding of most of the material}\\
+				\hline
+				\%    & 100\%          & 90\%     & 75\% & 0\%
+			\end{tabular}
+		\end{equation*}
+		It is expected that most students 
+		who put reasonable effort into the work
+		will get VG or G grades. 
+	\item 
+		The work \emph{must be submitted only on Collab} --- 
+		take pictures or scan your work,
+		make sure it's readable,
+		put it into a \emph{single PDF file with correct orientation},
+		and upload it before the deadline.
+		Failure to make a single PDF might result in zero points for a work
+		(first, a warning will be given).
+\end{enumerate}
+
+\subsection{Midterm tests (2 tests each worth 16\%; 32\% in total)}
+
+There are two midterm tests
+held
+during regular class times.
+They have
+similar taste as homework, and test basic knowledge of the material.
+
+Midterms are proctored via zoom and recorded.
+They are open book/notes. No other collaboration or internet search is allowed. 
+You can also use a calculator during the test.
+
+I encourage you to collaborate on test preparation, but needless to say that
+during the test and the exam each student must work individually.
+
+\subsection{Final exam (25\%)}
+
+The final exam will be cumulative, but will put more focus 
+on topics covered after the last midterm.
+Same rules (about proctoring and use of material) as for midterms.
+
+\subsection*{Letter grades}
+
+The scale by which course percent grades are turned into course letter grades
+will most likely be the following:
+\begin{equation*}
+	\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|}
+		Grade      & $ A+	$ & $A	$ & $A-	$ & $B+	$ & $B	$ & $B-	$ & $C+	$ & $C	$ & $C-	$ & $D+	$ & $D	$ & $D-$ \\
+		\hline
+		Minimum \% & 100     & 93   & 89    & 86    & 82    & 79    & 76    & 72    & 69    & 66    & 62    & 59
+	\end{tabular}
+\end{equation*}
+I reserve the right to slightly change this grade scale after the
+final exam.
+This may be needed
+to better incorporate into the letter grade
+possible fluctuations in the difficulty level of 
+midterms and the final.
+
+\section{Communication}
+\label{comm}
+
+\subsection{Email}
+\label{sub:email}
+
+My email address is \href{mailto:petrov@virginia.edu}{petrov@virginia.edu}.
+This is a backup channel for communication in case piazza, zoom or collab fails.
+In general, you have to
+ask your mathematical questions at piazza (\url{https://piazza.com/virginia/fall2020/20fmath3100sec23}).
+
+\subsection{Zoom}
+\label{sub:zoom}
+
+I will have my camera on during Zoom sessions, and invite you to keep
+your camera on if you are comfortable doing so. Whether or not your
+camera is on, your active participation in the course is essential.
+Please show initiative, active listening, and courtesy through the
+following: 
+\begin{itemize}
+	\item 
+Use the chat to ask questions, report problems, or whenever directed as part of a class activity. Keep chat messages respectful, concise, and relevant. I’m not judging your grammar, but remember you’re writing in an academic environment, even in the chat box. 
+\item 
+Use the ‘reactions’ buttons (clapping, thumbs up) if appropriate!
+\item 
+Keep your mic muted when you aren’t speaking, to lessen distractions (and forgive me if I occasionally have to mute you if you forget).
+\item 
+	Unmute yourself to ask questions when I am speaking; alternatively,
+	use the ‘raise hand’ button.
+\item 
+Know that when two people talk at the same time in Zoom, neither can be easily heard. It takes a while, but we’ll get into a rhythm of leaving time between speakers.
+\item 
+In this online environment, I will probably ‘cold call’ students more often than I would in the classroom. It can be hard for me to know who is ready to speak, so I may call on you when you’re not expecting it. If you need to ‘pass’ on a question once or twice, that’s OK.
+		
+\end{itemize}
+
+\subsection{Piazza}
+This is the space to ask (and answer!) 
+questions about problem sets, 
+lectures, and anything related to the course.
+Access here:
+\url{https://piazza.com/virginia/fall2020/20fmath3100sec23}.
+
+\subsection{Collab}
+\label{sub:collab}
+If you have anonymous comments on anything related to the course, you can make
+them via Collab.
+
+\section{How to succeed in the course}
+\label{success}
+
+\subsection{General things}
+
+The best way to learn in the course is to 
+watch all recorded lectures and take notes to retain the material in memory; 
+come to all discussion meetings;
+and do all the homework problems on your own or in collaboration.
+This will prepare you well for tests.
+
+\subsection{Main textbook}
+
+The textbook \emph{Introduction to Probability} by Anderson, Sepp\"al\"ainen, and Valk\'o 
+is 
+an excellent resource 
+to gain understanding of the course material. Some notes about it:
+
+\begin{enumerate}[$\bullet$]
+	\item I strongly encourage you to read the textbook in parallel with watching the lectures. 
+		It includes many examples and
+		extra exercises which augment the concepts discussed in class.
+	\item The textbook contains much more material than will be covered in classes, so it
+		makes sense to watch lectures and come to discussions to note which parts are omitted
+		(and so won't be in tests).
+\end{enumerate}
+
+\subsection{Additional textbooks}
+
+\begin{enumerate}
+	\item 
+		\emph{``Probability'' by Jim Pitman} is a reasonable alternative textbook.
+	\item 
+		\emph{Free textbook} 
+		\emph{``Introduction to Probability'' by Grinstead and Snell}.
+			Download: \url{https://math.dartmouth.edu/~prob/prob/prob.pdf};
+			Accompanying web page: \url{https://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/book.html}.
+\end{enumerate}
+
+These textbooks contain additional problems and material. They may be helpful if you want
+a deeper understanding of some concepts, or if you want to read exposition of the familial material
+in a different style, which might be very helpful for better learning.
+
+(It absolutely not required that you buy or read these books.)
+
+\subsection{Extra reading}
+
+The popular book
+\emph{``How Not to Be Wrong: The Power of Mathematical Thinking'' by Jordan Ellenberg}
+discusses how math touches every aspect of real life, and has 
+numerous examples related to probability and statistics. 
+I can recommend this nice book as a parallel reading. Some
+examples I learned from this book might be mentioned in class.
+(It absolutely not required that you buy or read this book.)
+
+\subsection{Piazza}
+
+Ask mathematical questions about homework, lectures, and anything else
+related to the class at Piazza (\url{https://piazza.com/virginia/fall2020/20fmath3100sec23}).
+Answer other students' questions.
+
+
+\subsection{Office hours}
+
+I am available during office hours to answer questions on the content of the 
+course, clarify various points, and I can also help you with homework assignments. 
+Besides regular office hours, you can automatically schedule appointments, see 
+\Cref{sec:necc}.
+
+\subsection{Math Collaborative Learning Center}
+
+The Math Department 
+Collaborative Learning Center
+is available for helping students in this course: 
+see \url{https://math.virginia.edu/undergraduate/MCLC/}
+for more information and schedule. 
+
+\subsection{Other resources}
+
+There is a number of online resources which may help you while doing the homework:
+Khan Academy, Wikipedia, and many other 
+places contain lots of basic material on probability theory. Google Search
+in general
+is also a valuable resource.
+
+\subsection{Collaboration on homework assignments}
+\label{collaboration}
+
+Group work on homework problems is allowed and strongly encouraged.
+Discussions are in general very
+helpful and inspiring. Class meetings will also contain ample time
+for group work on homework problems.
+Nevertheless, before talking to others, get well started
+on the problems, and contribute your fair share to the process. 
+
+When completing the written homework assignments, everyone must write up his or her own
+solutions in their own words, and cite any reference 
+(other than the textbook and
+class notes) that you use. Quotations and citations are part of the Honor Code for both UVa
+and the whole academic community. 
+
+It is very important that you truly understand the homework solutions you hand
+in, otherwise you may be unpleasantly surprised by your test results.
+
+\section{Approximate course schedule}
+
+\noindent Add/drop information: \url{https://www2.virginia.edu/registrar/reginst1208.html}
+\bigskip
+
+\begin{quote}
+	The course has 3 ``pillars'': central limit theorem for Gaussian approximation, 
+	Poisson processes, and conditional expectations. 
+	Plus there are several technical things to learn: random variables, expectations as integrals, 
+	joint distributions, etc.
+\end{quote}
+
+\bigskip
+
+A summary of the lectures content is posted at 
+\url{https://github.com/lenis2000/Math3100_F20_LectureNotes/blob/master/lecture_notes.pdf})
+(\href{https://raw.githubusercontent.com/lenis2000/Math3100_F20_LectureNotes/master/lecture_notes.pdf}
+{\texttt{link to automatically download}}).
+
+\bigskip
+
+\begin{enumerate}[\bf{}{[}week 1{]}]
+	\item 8/25, 8/27. Introduction. Sample space, axioms of probability, random sampling, review of counting (1.1--1.2).
+	\item 9/1, 9/3. Problem set 1 due on Tuesday.
+		Infinitely many outcomes. Geometric series. 
+		Rules of probability, Venn diagrams, random variables
+		(1.3--1.5).
+	\item 9/8, 9/10. Problem set 2 due on Tuesday.
+		Conditional probability, Bayes' formula, independence
+		(2.1--2.3).
+	\item 9/15, 9/17. Problem set 3 due on Tuesday.
+		Independent trials, birthday problem, conditional independence, 
+		probability distribution of a random variable
+		(2.4--2.5, 3.1).
+	\item 9/22 (\textbf{Midterm 1: Chapters 1--2}). 9/24 --- 
+		Probability distribution of a random variable,
+		cumulative distribution function (3.1--3.2).
+	\item 9/29, 10/1. Problem set 4 due on Tuesday.
+		Cumulative distribution function, 
+		expectation, variance, 
+		Gaussian distribution
+		(3.3--3.5).
+	\item 10/6, 10/8. Problem set 5 due on Tuesday.
+		Gaussian distribution, normal approximation,
+		law of large numbers
+		(3.5, 4.1--4.2).
+		Applications of normal approximation (4.3).
+	\item 10/13, 10/15. Problem set 6 due on Tuesday.
+		Poisson approximation, exponential distribution, Poisson process
+		(4.4--4.6).
+	\item 10/20 --- Poisson process, gamma distribution (4.6). 
+		Joint distributions (6.1--6.3).
+		10/22 (\textbf{Midterm 2: Chapters 1--4}).
+	\item 10/27, 10/29.
+		Problem set 7 due on Tuesday.
+		Joint distributions (6.1--6.3).
+	\item 11/3, 11/5. Problem set 8 due on Tuesday.
+		Sums of independent random variables and related topics (survey of 
+		selected material of chapters 7 and 8).
+	\item 11/10, 11/12. Problem set 9 due on Tuesday.
+		Law of large numbers, central limit theorem (9.1--9.3).
+	\item 11/17, 11/19. Problem set 10 due on Tuesday.
+		Conditional distributions (10.1--10.3).
+	\item 11/24. Problem set 11 due on Tuesday.
+		Conditional distributions (10.1--10.3).
+\end{enumerate}
+
+\section{Policies}
+
+\subsection{Late/make up work} Each assignment will have due date and time.
+Late assignments are not accepted. There will also be no make up for the midterm test.
+However, if you have special needs, emergency, or unavoidable conflicts, please
+let me know as soon as possible, so we can arrange a workaround.
+
+\subsection{Special needs}
+
+All students with special needs requiring accommodations should present the
+appropriate paperwork from the Student Disability Access Center (SDAC). It is
+the student's responsibility to present this paperwork in a timely fashion and
+follow up with the instructor about the accommodations being offered.
+Accommodations for test-taking (e.g., extended time) should be arranged at
+least 5 business days before an exam.
+
+\subsection{Honor Code} The University of Virginia Honor Code applies to this
+class and is taken seriously (in particular, 
+see \Cref{collaboration} on homework collaboration).
+Any honor code violations,
+especially in written tests (midterms and the final exam)
+will be referred to the
+Honor Committee.
+
+\subsection{Recording}
+
+The lectures are recorded, and sometimes they are recorded live. 
+If you join a live recording of a lecture then you understand that it is
+recorded, and the recording will be posted to collab $\to$ lecture capture (panopto).
+Per University of Virginia
+policies,
+these recordings cannot be shared outside of our course, 
+
+Midterms and final exam are proctored and recorded over zoom, and 
+you understand that this recording (including chats where you are supposed to ask questions)
+will not be shared with students, but will be stored in the zoom cloud.
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
