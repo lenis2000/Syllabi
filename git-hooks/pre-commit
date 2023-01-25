@@ -49,5 +49,5 @@ fi
 # exec git diff-index --check --cached $against --
 
 # Compile latex stuff
-latexmk -pdf -silent -synctex=1 Syllabus_7310_s19.tex
-git add Syllabus_7310_s19.pdf
+# latexmk -pdf -silent -synctex=1 Syllabus_7310_s19.tex
+# git add Syllabus_7310_s19.pdf
