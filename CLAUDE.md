@@ -34,12 +34,20 @@ When preparing HTML syllabi for Canvas LMS, the following accessibility requirem
 
 ## File Management
 
-### Two-Version Approach for HTML Syllabi
-To resolve the conflict between Canvas requirements (h2 first) and web accessibility (h1 first):
+### Three-Version Approach for Syllabi
+Syllabi are maintained in three parallel versions:
 - **`Syllabus_NAME.html`** - Standalone website version with `<h1>/<h2>/<h3>` hierarchy
-- **`Syllabus_NAME_canvas.html`** - Canvas version with `<h2>/<h3>/<h4>` hierarchy
-- Both versions should be identical except for heading hierarchy
-- Keep CSS identical in both files for consistent visual appearance
+- **`Syllabus_NAME_canvas.html`** - Canvas version with `<h2>/<h3>/<h4>` hierarchy (accessibility requirement)
+- **`Syllabus_NAME.tex`** - LaTeX source that compiles to PDF
+- All three versions should have identical content except for format-specific requirements
+- When updating content, **all three files must be updated** to maintain consistency
+
+### Semester-Specific Resources
+- Images and other resources are stored in semester-specific folders on S3 (e.g., `S25/`, `S26/`)
+- When updating for a new semester, remember to:
+  1. **Move/copy the image on S3** to the new semester folder
+  2. Update image URLs in HTML files (e.g., `storage.lpetrov.cc/EGMT1520/S25/` → `.../S26/`)
+  3. LaTeX files typically use local image paths (e.g., `EGMT_image.png`)
 
 ## Workflow Patterns
 
@@ -49,3 +57,18 @@ When making accessibility or formatting changes that affect multiple elements (l
 2. Update CSS first to accommodate new HTML structure
 3. Use `replace_all: true` when replacing multiple identical instances
 4. Process changes in logical order (main sections first, then subsections)
+
+### Standard Build and Deploy Workflow
+When updating syllabi:
+1. Make content changes to all three versions (HTML, Canvas HTML, LaTeX)
+2. Build the PDF: `pdflatex -interaction=nonstopmode Syllabus_NAME.tex`
+3. Review changes with `git status` and `git diff`
+4. Commit with descriptive message and push: `git add <files> && git commit -m "..." && git push`
+5. For semester transitions, remember to move/copy images on S3 to new semester folder
+
+## LaTeX Conventions
+
+### Line Length
+- Keep lines reasonably short (around 80 characters) for better readability and version control
+- Break long paragraphs at natural sentence boundaries
+- LaTeX will reflow text during compilation, so line breaks in source don't affect output
