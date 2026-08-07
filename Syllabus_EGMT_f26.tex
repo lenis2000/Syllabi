@@ -1,0 +1,344 @@
+\documentclass[oneside,11pt]{amsart}
+\usepackage[utf8]{inputenc}%
+\usepackage[english]{babel}%
+\usepackage{amsmath,amssymb,amsthm,amsfonts}%
+\usepackage[unicode]{hyperref}%
+\usepackage{mathrsfs,bbm}%
+\usepackage{paralist}
+\usepackage{color}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{stmaryrd}%
+%\usepackage{refcheck}
+\usepackage{graphicx}
+\usepackage[DIV15]{typearea}
+\usepackage{multicol,tikz}
+\usepackage{datetime}
+\usepackage{cleveref}
+
+\usepackage[shadow]{todonotes}
+
+\usepackage{etoolbox}
+\patchcmd{\section}{\scshape}{\large\itshape\bfseries}{}{}
+
+\usepackage{caption}
+\captionsetup{labelformat=empty,labelsep=none}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!red,
+  urlcolor=green!60!black
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\synctex=1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title[Building Truth from Scratch]{EGMT 1520: Building Truth from Scratch\\(Empirical \& Scientific Engagement)}
+\author{Leonid Petrov \\ Fall 2026}
+\date{Compiled on \today, \currenttime. An up to date syllabus is always at \href{https://lpetrov.cc/teaching/Syllabus_EGMT_f26.pdf}{\texttt{this link}}. An accessible HTML version is at \href{https://lpetrov.cc/teaching/Syllabus_EGMT_f26.html}{\texttt{this link}}.}
+\maketitle
+
+
+\section{How do we know a claim is true?}
+
+This course is a hands-on workshop in making and testing arguments in the context of mathematics.
+We will generate conjectures from examples, search for counterexamples, and turn ideas into precise statements and proofs. Through problem-solving sessions and math debates, you'll practice evaluating arguments, giving and receiving constructive feedback, and communicating clearly in writing and speech. By experiencing mathematics as a creative process --- where patterns suggest conjectures and logical reasoning turns intuition into conviction --- you'll develop a practical sense for what counts as evidence in mathematics and how to build reliable conclusions.
+By the end of the course, you will be able to
+\begin{enumerate}[$\bullet$]
+    \item \textbf{Define and delimit what constitutes valid mathematical evidence} by distinguishing between examples, counterexamples, conjectures, and formal proofs, while recognizing the limitations of empirical observations.
+    % \emph{(Aligned with pillar objective: “define and delimit what constitutes empirical evidence”)}
+    \item \textbf{Develop a framework for discerning different types of mathematical knowledge} by exploring how empirical evidence, abstract reasoning, and logical structure work together to shape mathematical understanding.
+    % \emph{(Aligned with pillar objective: “develop a framework for discerning types of knowledge based on what is empirically
+% observable in the natural, physical and social worlds”)}
+    \item \textbf{Formulate and communicate mathematical reasoning} by translating intuitive insights into precise statements, evaluating the soundness of arguments, and engaging in constructive dialogue to identify and resolve reasoning gaps.
+    % \emph{(Aligned with pillar objective: “evaluate supported claims about the natural and social worlds by framing empirical questions and methods and interpreting the claims in the context of new data”)}
+    \item \textbf{Reflect on the nature of mathematical truth} by examining personal assumptions about certainty, analyzing when and why certain arguments are conclusive, and articulating how purely empirical approaches can both inform and limit our understanding of complex phenomena.
+    % \emph{(Aligned with pillar objective: “articulate the limitations of using only empirical approaches to describe complex phenomena”)}
+\end{enumerate}
+
+\begin{center}
+\vspace{1cm}
+\includegraphics[width=.5\textwidth]{EGMT_image.png}
+\vspace{1cm}
+\end{center}
+
+\newpage
+\section{Contact \& Logistics}
+
+\noindent
+\begin{tabular}{ll}
+\textbf{Instructor:} Leonid Petrov &\qquad \qquad \qquad\textbf{Office:} 209 Kerchof Hall \\
+\textbf{Email:} \href{mailto:petrov@virginia.edu}{petrov@virginia.edu} & \qquad \qquad \qquad\textbf{Office hours:} \\
+\textbf{Website:} \url{https://lpetrov.cc}
+& \qquad \qquad \qquad TBA (posted on Canvas), \\
+& \qquad \qquad \qquad or by appointment (email me; you can make \\
+& \qquad \qquad \qquad as many appointments as you need)
+\end{tabular}
+
+\smallskip
+\noindent\textbf{Course Info:} EGMT 1520-206 (19629) --- Empirical Engagement.
+
+\smallskip
+\noindent\textbf{Weekly rhythm:} Class meets \textbf{Mondays and Wednesdays 3:30PM -- 4:45PM} in \textbf{Gilmer Hall 247}.
+\begin{itemize}
+    \item \textbf{Dates:} October 19, 2026 -- December 7, 2026.
+    \item \textbf{No Class:} November 25 (Thanksgiving break).
+    \item \textbf{All 14 class meetings, by week:}
+    \begin{itemize}
+        \item Week 1: Mon Oct 19, Wed Oct 21
+        \item Week 2: Mon Oct 26, Wed Oct 28
+        \item Week 3: Mon Nov 2, Wed Nov 4
+        \item Week 4: Mon Nov 9, Wed Nov 11
+        \item Week 5: Mon Nov 16, Wed Nov 18
+        \item Week 6: Mon Nov 23 --- \emph{special meeting --- Math Casino} (no class Wed --- Thanksgiving)
+        \item Week 7: Mon Nov 30, Wed Dec 2
+        \item Week 8: Mon Dec 7
+    \end{itemize}
+\end{itemize}
+
+\smallskip
+\noindent
+\textbf{Course materials:}
+There are no required textbooks for this course.
+All materials will be handed out in class and later posted on Canvas.
+The Commonplace Book is an integral part of the course for homework assignments and reflections --- I recommend you bring it to
+each class session.
+Pencils, paper, and manipulatives are provided in class.
+
+\smallskip
+\noindent
+\textbf{Canvas:} Problem sets and weekly writing submission assignments will be posted on Canvas.
+
+\smallskip
+\noindent
+\textbf{Digital accessibility:} This course uses a variety of digital tools and content. If you have trouble reading, viewing, or interacting with any materials, please let me know right away so we can work through this together.
+
+\section{How we work together in class}
+
+This is a hands-on, pen-and-paper course. Since we meet twice a week, our workflow is designed to move from intuition to rigor over the course of a ``Problem Cycle.''
+
+\subsection{The Weekly Problem Cycle}
+
+\begin{enumerate}[$\bullet$]
+    \item \textbf{Monday (Launch \& Explore):}
+    \begin{itemize}
+        \item \textbf{The Primer:} We begin with a short introduction of the week's core topic so you have the tools you need before you start solving.
+        \item \textbf{Problem Solving:} You receive a fresh problem set and work in your home subgroups. Problems are ordered by difficulty (Easy $\to$ Medium $\to$ Hard). I circulate, ask questions, and may invite nearby peers to listen in and challenge your reasoning.
+    \end{itemize}
+
+    \item \textbf{Wednesday (Refine \& Debate):}
+    \begin{itemize}
+        \item \textbf{Model Proof Analysis:} One of the students will present a ``Model Solution'' on the board to explicitly highlight expectations for structure, clarity, and logical flow. The audience will ask clarifying questions, and challenge any gaps.
+        \item \textbf{Mini-Debates:} We will hold impromptu debates where groups present their partial solutions to harder problems from Monday, and the class acts as ``Skeptics'' to test the arguments.
+        \item \textbf{Acceptance:} By the end of class (or the start of the next), your group aims to have your solutions ``accepted'' by the instructor. A problem is ``accepted'' when your subgroup can answer follow-ups and defend key steps without unresolved gaps.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Home subgroups (fixed)}
+On Week 2 we form ``home subgroups'' for in-class collaboration:
+$\delta, \ \theta, \ \zeta, \ \rho, \ \lambda, \ \phi$.\footnote{Math and science use Greek symbols very often. The names of the subgroups are
+\emph{delta}, \emph{theta}, \emph{zeta}, \emph{rho}, \emph{lambda}, and \emph{phi}.}
+Subgroups remain stable throughout the course.
+
+\subsection{Team roles (rotate each meeting)}
+In subgroups of $5$--$6$, the following sample roles work well:
+\begin{compactitem}
+    \item \textsc{Explainer}: articulates the current approach and restates the problem in your own words.
+    \item \textsc{Skeptic}: presses on assumptions, looks for gaps, and frames precise questions.
+    \item \textsc{Counterexample Hunter}: designs and tests examples/edge cases to probe the claim.
+    \item \textsc{Recorder}: maintains a clean write-up of the steps in the problem.
+    \item \textsc{Verifier}: checks computations and logic, and ensures steps follow from the stated problem.
+    \item \textsc{Connector}: ensures that all subgroup members understand and can explain the solution.
+\end{compactitem}
+You may keep the roles informal or explicitly assign them in your subgroup, but \emph{make sure you rotate them at least each week, if not more often}.
+
+\subsection{Commonplace book}
+The Commonplace Book is used for your weekly writing assignments and reflections, which you submit as photos to Canvas. It is helpful to bring it to class each time, but pencils and paper are provided.
+
+\subsection{Topic}
+The weekly math topic is not announced in advance --- we need everyone to bring their curiosity and creativity to the class for a shared joy of discovering new ideas.
+
+\subsection{Devices}
+Please keep devices in your bag unless you have an accommodation that requires otherwise. This is a pen-and-paper course.
+
+\section{Commonplace Book weekly assignments}
+
+Each week after the class,
+you will need to complete an assignment in your Commonplace Book,
+and submit photos of the pages to Canvas. Sample assignments include
+(there may be 1 or 2 in a given week):
+
+\begin{enumerate}[(1)]
+  \item
+	\textbf{Weekly reflection (300 words / 1 page limit)} --- question changes
+	every week. Examples:
+	\begin{enumerate}
+	\item
+		\textbf{What is the hardest mathematical fact I have ever seen and understood
+		in my life?}
+		(\emph{first week assignment}).
+		Describe your mathematical journey in your own words (not just list
+		math classes you took). What was the hardest mathematical thing you
+		have ever seen and understood?
+		\emph{This assignment will help me form balanced home subgroups starting in the second week.}
+	\item
+		\textbf{What counted as evidence for me?}
+		Name one math experience from this week
+		and list \emph{exactly what} made it convincing \emph{to
+		you} (e.g., a minimal example, a failed counterexample, a
+		definition that removed ambiguity, an auxiliary statement
+		that closed a gap).
+		End with one thing that would change your mind about
+		this experience being convincing.
+	\item \textbf{Reflect on the nature of mathematical truth.}
+		What does it mean for a mathematical claim to be true?
+		How is it different from a scientific claim, like
+		``water boils at 100 degrees Celsius''?
+		What is the role of examples, counterexamples, and proofs
+		in establishing mathematical truth?
+		\textbf{Assumption audit}
+            Pick one problem from the problem set, and list all
+            assumptions you used in your solution
+            (not just those stated in the problem). For each, mark:
+            \emph{needed} / \emph{not needed} / \emph{uncertain}. Then
+            try to \emph{drop one}: either give a tiny counterexample
+            that shows it \emph{was} needed, or a brief note
+            explaining why the argument still goes through.
+	\end{enumerate}
+
+\item \textbf{Problem Cycle Completion}
+Instead of a single Sunday deadline for problems, our work flows from Monday to Wednesday.
+\begin{itemize}
+    \item \textbf{In-Class Acceptance:} Your goal is to get your group's solution ``accepted'' by the instructor by the end of the Wednesday class. An accepted solution has no unresolved logic gaps.
+    \item \textbf{The Write-up:} Once accepted, you may be asked to capture the final, polished argument in your Commonplace book.
+\end{itemize}
+
+\item \textbf{Weekly Reflection}
+Due \textbf{Sunday 10:00\,pm} on Canvas. This remains a vital part of your grade. You will reflect on the nature of the evidence you encountered during the previous Mon-Wed cycle.
+\end{enumerate}
+\emph{Submission format:} Clear photos or a single PDF to Canvas by \textbf{Sunday 10:00\,pm}, submitted to the required assignment.
+
+\section{Engaging Grounds}
+
+This component is an integral part of the Engagements program.
+% TODO: replace with the official Quarter 2 Engaging Grounds tasks when
+% the Engagements program distributes them.
+The specific tasks for this quarter will be distributed by the
+Engagements program and posted on Canvas.
+Completion must be documented in the Commonplace book, and the
+photos must be submitted to Canvas by the end of the semester.
+The Engaging Grounds component is worth 10\% of the final grade.
+
+\section{Grading}
+
+\begin{enumerate}[$\bullet$]
+\item \textbf{In-class work \& explanations (50\%):}
+Assessed on:
+\begin{compactitem}
+  \item \textbf{Clarity} of explanations at the table.
+  \item \textbf{Responsiveness} to questions and proposed counterexamples (can you repair, refine, or retract a claim when pressed?).
+  \item \textbf{Equitable participation} within the subgroup (roles rotate; multiple voices contribute to each explanation).
+\end{compactitem}
+Attendance is required to earn credit. A problem is ``accepted'' when your subgroup can answer follow-ups and defend key steps without unresolved gaps.
+
+ \item \textbf{Commonplace notebook (40\%):}
+	Weekly writing assignments, submitted
+	on Canvas by Sunday 10:00\,pm as photos or a PDF scan.
+	Grading is on the following scale:
+	\emph{Meets} (full credit),
+	\emph{Revise}
+	(resubmission within 72 hours yields full credit), or
+	\emph{Missing} (0).
+	Lowest one weekly submission is dropped
+	automatically.
+
+	\item \textbf{Engaging Grounds (10\%):}
+	Complete the assigned tasks in the Commonplace book, and
+	submit photos of the pages to Canvas by the end of the semester.
+\end{enumerate}
+
+The percentage grade is \emph{not rounded up}, and is calculated
+according to the following scale:
+\begin{center}
+\begin{tabular}{ll|ll|ll}
+100+ & A+ & 83--86.99 & B & 67--69.99 & D+ \\
+93--99.9 & A & 80--82.99 & B- & 63--66.99 & D \\
+90--92.99 & A- & 77--79.99 & C+ & 60--62.99 & D- \\
+87--89.99 & B+ & 73--76.99 & C & $<60$ & F \\
+70--72.99 & C- & & \\
+\end{tabular}
+\end{center}
+
+
+\section{Policies}
+
+\subsection{Late work}
+Each weekly notebook assignment is due on Sunday at 10pm.\footnote{With a small forgiveness window for technical issues.}
+
+You have one no-questions-asked Grace Week: submit any one weekly notebook by Wednesday 10 pm with no penalty. Beyond that,
+late assignments are not accepted.
+If you have special needs or an emergency, please let me know as soon as possible.
+
+\subsection{Honor Code}
+The University of Virginia Honor Code applies to this course and is taken seriously. Any Honor Code violations will be referred to the Honor Committee.
+
+\subsection{Devices}
+
+This is a pen-and-paper course. Please keep all devices in your bag during class activities, unless you have an accommodation that directs otherwise.
+
+\subsection{Use of AI}
+
+\begin{enumerate}[$\bullet$]
+  \item \textbf{Allowed for learning}: asking conceptual questions; generating small practice examples; checking ideas (not text) for plausibility.
+
+\noindent
+For learning with LLMs, here is an example \href{https://gist.githubusercontent.com/lenis2000/cb5ea004f8aa6461be71398e19ae488e/raw/a0103eab0b865a1cedf2f3bf3c00d217bd294005/AI_hint_prompt.txt}{\texttt{prompt}} that might be helpful.
+  \item \textbf{Allowed with citation}: grammar/clarity edits to your own draft (light copy-editing only). If used, add a one-line note at the end: AI-assisted for copy-editing only.
+
+  \item \textbf{Not allowed}: drafting any part of the submitted solution or reflections; step-by-step proofs; problem-specific hints beyond what's provided in class; rewriting your math into polished prose.
+\end{enumerate}
+
+
+
+\subsection{Attendance}
+
+Consistent attendance and thoughtful in-class participation are absolutely essential for your successful completion of Engagements courses. Since each course is only 14 classes, each absence is significant. That said, there are situations in which you may need to miss a class meeting. In those situations,
+Engagements professors are asked to observe the following policy:
+
+\begin{enumerate}[$\bullet$]
+    \item (excused absences) Authorized university activities (such as university-sponsored athletic events) and the observance of religious holidays are considered excused absences. However, you must submit a written request detailing the dates of these absences directly to me by email by \textbf{October 27}. If these types of absences would result in you missing more than 2 of the required class meetings, you may need to switch to a different course with fewer scheduling conflicts.
+    \item (other causes of absences)
+		We all get sick and we all have experienced unexpected family and personal emergencies. If you must miss class for any reason, you should notify me in advance, when possible, and you are responsible for making up any missed work. In line with College policy, professors are under no obligation to offer alternative assignments or to organize and facilitate make-up work: students must take the initiative.
+\end{enumerate}
+
+After the second absence, any subsequent unexcused absence will incur an automatic one letter-grade (or 10 out of 100 points) penalty. For example:
+\begin{compactitem}
+\item A student with ``A'' level work who misses a total of 3 classes would receive a ``B'' letter grade.
+\item A student with ``A'' level work who misses a total of 4 classes would receive a ``C'' letter grade.
+\end{compactitem}
+
+\medskip\noindent
+\textbf{Important Reminder.}
+If you are experiencing significant and pressing personal circumstances, particularly if those circumstances interfere with your ability to attend class and complete coursework, you should contact your academic advisor to talk through the situation as soon as possible. Help is available, and these situations can almost always be worked out --- but you need to let me know that there's a problem.
+
+
+
+\subsection{Special needs}
+
+All students with special needs requiring accommodations should present the appropriate paperwork from the Student Disability Access Center (SDAC). It is the student's responsibility to present this paperwork in a timely fashion and to follow up with the instructor about the accommodations being offered.
+% \subsection{Recording for a personal study}
+%
+% Class sessions for this course may be audio recorded as a
+% reasonable accommodation for a disability for the student's
+% own personal study and review. These audio recordings will
+% be deleted at the end of the semester. Recordings will not
+% be reproduced, shared with those not enrolled in the class,
+% nor uploaded to other online environments.
+
+
+
+\end{document}
